@@ -88,17 +88,26 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="overflow-hidden rounded-2xl bg-white p-4 shadow-lg shadow-slate-200/60 ring-1 ring-slate-100">
-              <img
-                src="/profile.png"
-                alt="Portrait professionnel de Brooklyn Gilbert"
-                className="aspect-[4/5] w-full rounded-xl object-cover"
-                width={560}
-                height={700}
-                loading="eager"
-                decoding="async"
-              />
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+            <div
+              className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-purple-300/50 via-pink-200/40 to-sky-300/50 blur-3xl"
+              aria-hidden
+            />
+            <img
+              src="/lova_ramiharisoa.png"
+              alt="Portrait professionnel"
+              className="relative aspect-square w-full rounded-3xl object-cover object-top shadow-2xl shadow-purple-900/20 ring-1 ring-white/60 transition-transform duration-500 ease-out -rotate-2 hover:rotate-0 hover:scale-[1.03]"
+              width={448}
+              height={448}
+              loading="eager"
+              decoding="async"
+            />
+            <div className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-slate-700 shadow-lg ring-1 ring-slate-100 backdrop-blur">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+              </span>
+              Disponible pour un poste
             </div>
           </div>
         </div>
