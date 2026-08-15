@@ -1,167 +1,159 @@
+import { projects } from './data/projects'
+
+export const author = {
+  brandTitle: 'Lova Ramiharisoa',
+  logoInitial: 'LR',
+  /** Remplacez par votre nom si vous souhaitez l’afficher dans le hero. */
+  displayName: 'Développeur full stack',
+  tagline: 'Développeur full stack',
+  whatsappHref: 'https://wa.me/261334393443',
+} as const
+
 export const navLinks = [
   { href: '#accueil', label: 'Accueil' },
+  { href: '#stack', label: 'Stack' },
   { href: '#apropos', label: 'À propos' },
   { href: '#processus', label: 'Processus' },
   { href: '#portfolio', label: 'Portfolio' },
-  { href: '#blog', label: 'Blog' },
   { href: '#services', label: 'Services' },
   { href: '#contact', label: 'Contact' },
 ] as const
 
 export const hero = {
-  title: "Bonjour, je suis Brooklyn Gilbert",
+  title: 'Bonjour, je suis développeur full stack',
   subtitle:
-    "Designer UX/UI et développeur freelance. Je conçois des interfaces claires et des expériences digitales agréables.",
+    "Spécialisé en React, Next.js, React Native, NestJS, WordPress, PostgreSQL, Prisma et Stripe. J'aime construire des produits web et mobiles solides, avec une base de données propre et des paiements fiables.",
   stats: [
-    { value: '15+', label: "Années d'expérience", icon: 'briefcase' as const },
-    { value: '200+', label: 'Projets réalisés', icon: 'layers' as const },
-    { value: '58', label: 'Clients satisfaits', icon: 'users' as const },
+    { value: '2+', label: "Années d'expérience", icon: 'briefcase' as const },
+    { value: String(projects.length), label: 'Projets', icon: 'layers' as const },
+    {
+      value: '≈1 an',
+      label: 'Projet streaming (équipe)',
+      icon: 'users' as const,
+    },
   ],
 }
 
 export const about = {
-  title: 'Je suis designer UX/UI professionnel',
+  title: 'À propos de moi',
   paragraphs: [
-    "J'aide les marques à transformer leurs idées en produits utiles, accessibles et esthétiques. Mon approche combine recherche utilisateur, prototypage et design system.",
-    "Je collabore avec des équipes produit et développement pour livrer des interfaces cohérentes, mesurables et alignées sur vos objectifs business.",
+    "Développeur avec 2 ans d'expérience, je collabore actuellement avec deux freelances sur une plateforme de streaming depuis environ un an : stack React, Next.js, NestJS, React Native, PostgreSQL, Prisma et Stripe.",
+    "Je conçois et maintiens des interfaces web, des APIs et des applications mobiles, en soignant l'architecture et la qualité du code (Git, revues, bonnes pratiques).",
+    "Diplômé d'un master en génie logiciel à l'EPSA d'Antsirabe, je combine formation académique et projets concrets (jeux en ligne, sites vitrines WordPress, gestion scolaire, etc.).",
   ],
 }
 
 export const workSteps = [
   {
     step: '1',
-    title: 'Recherche',
+    title: 'Analyse & cadrage',
     description:
-      'Entretiens, analyse concurrentielle et définition des besoins pour poser les bonnes bases.',
+      'Compréhension du besoin, contraintes techniques, modèle de données et périmètre fonctionnel.',
   },
   {
     step: '2',
-    title: 'Analyse',
+    title: 'Architecture',
     description:
-      'Cartographie des parcours, priorisation des problèmes et critères de succès clairs.',
+      'Choix des stacks (front, API, mobile), structure des modules et stratégie de déploiement.',
   },
   {
     step: '3',
-    title: 'Design',
+    title: 'Développement',
     description:
-      'Wireframes, maquettes haute-fidélité et prototypes interactifs pour valider rapidement.',
+      'Itérations courtes, API REST/ temps réel, intégration Prisma/Stripe, composants UI réutilisables.',
   },
   {
     step: '4',
-    title: 'Lancement',
+    title: 'Livraison',
     description:
-      'Accompagnement développement, QA design et itérations post-mise en ligne.',
+      'Tests, documentation, mise en production et suivi des correctifs avec Git.',
   },
 ] as const
 
-export const portfolioProjects = [
+/** Logos via CDN publics (Devicon / Simple Icons). */
+export const techStack = [
   {
-    id: '1',
-    category: 'Web design',
-    title: 'Tableau de bord admin produit',
-    description: 'Refonte complète du back-office pour une SaaS B2B.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    name: 'React',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
   },
   {
-    id: '2',
-    category: 'Application mobile',
-    title: 'App fitness & bien-être',
-    description: 'UX research, UI kit et design des flux principaux.',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+    name: 'Next.js',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
   },
   {
-    id: '3',
-    category: 'Branding',
-    title: 'Identité pour une startup fintech',
-    description: 'Direction artistique, site vitrine et déclinaisons sociales.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    name: 'React Native',
+    logoUrl: 'https://reactnative.dev/img/header_logo.svg',
   },
   {
-    id: '4',
-    category: 'E-commerce',
-    title: 'Boutique mode durable',
-    description: 'Parcours d’achat, fiches produit et composants e-commerce.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+    name: 'NestJS',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-plain.svg',
   },
   {
-    id: '5',
-    category: 'Design system',
-    title: 'Librairie de composants interne',
-    description: 'Tokens, documentation et intégration avec React.',
-    image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&q=80',
+    name: 'WordPress',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg',
   },
   {
-    id: '6',
-    category: 'Site marketing',
-    title: 'Landing page SaaS analytics',
-    description: 'Structure narrative, preuves sociales et CTA optimisés.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80',
-  },
-] as const
-
-export const blogPosts = [
-  {
-    id: '1',
-    date: '12 mars 2026',
-    title: 'Comment structurer un design system évolutif',
-    image: 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=600&q=80',
+    name: 'PostgreSQL',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
   },
   {
-    id: '2',
-    date: '28 févr. 2026',
-    title: 'Les erreurs UX les plus fréquentes sur mobile',
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80',
+    name: 'Prisma',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg',
   },
   {
-    id: '3',
-    date: '10 févr. 2026',
-    title: 'Collaborer efficacement avec les développeurs',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80',
+    name: 'Stripe',
+    logoUrl: 'https://cdn.simpleicons.org/stripe/635BFF',
   },
   {
-    id: '4',
-    date: '22 janv. 2026',
-    title: 'Mesurer l’impact du design avec des métriques simples',
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80',
+    name: 'Git',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
   },
 ] as const
 
 export const services = [
   {
-    title: 'Expérience utilisateur (UX)',
+    title: 'Applications web (React / Next.js)',
     description:
-      'Ateliers, tests utilisateurs, architecture d’information et prototypage pour réduire les risques produit.',
+      'Interfaces modernes, SSR/SSG avec Next.js, composants réutilisables et intégration API (REST, WebSocket).',
   },
   {
-    title: 'Interface utilisateur (UI)',
+    title: 'Mobile & backends (React Native / NestJS)',
     description:
-      'Maquettes pixel-perfect, design system et guidelines pour une identité cohérente sur tous les supports.',
+      'Applications mobiles connectées à des APIs NestJS, validation, auth, temps réel si besoin.',
   },
   {
-    title: 'Développement web',
+    title: 'Données, paiements & WordPress',
     description:
-      'Intégration front (React, Next.js, Tailwind) en respectant les standards d’accessibilité et de performance.',
+      'Modélisation PostgreSQL avec Prisma, paiements Stripe, et sites vitrines ou blogs sous WordPress.',
   },
 ] as const
 
-export const clientLogos = [
-  { name: 'Google', abbr: 'G' },
-  { name: 'Dribbble', abbr: 'Dr' },
-  { name: 'LinkedIn', abbr: 'in' },
-  { name: 'Amazon', abbr: 'A' },
-  { name: 'Medium', abbr: 'M' },
-  { name: 'Behance', abbr: 'Be' },
-] as const
+export const collaborationHighlight = {
+  title: 'Projet en cours',
+  body: "Plateforme de streaming — équipe de trois (moi + deux freelances), depuis environ un an : React, Next.js, NestJS, React Native, PostgreSQL, Prisma, Stripe, Git.",
+}
 
 export const testimonial = {
   quote:
-    'Brooklyn a su écouter nos contraintes, challenger nos idées et livrer une interface moderne que nos clients adorent. Une collaboration fluide du kick-off à la mise en production.',
-  author: 'Arthur Taylor',
-  role: 'Directeur général, Northwind Studio',
+    "Une collaboration sérieuse sur la partie technique : code structuré, bonnes pratiques Git, et une communication claire sur les choix d'architecture (API, base, mobile).",
+  author: 'Équipe projet streaming',
+  role: 'Collaboration freelance',
 }
 
+export const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/al7373', short: 'GH' },
+  { label: 'LinkedIn', href: '#', short: 'in' },
+] as const
+
 export const contactInfo = {
-  email: 'hello@brooklyngilbert.design',
-  phone: '+33 6 12 34 56 78',
-  location: 'Paris, France',
+  email: 'vous@exemple.com',
+  phone: '+261 XX XX XXX XX',
+  location: 'Madagascar',
 }
