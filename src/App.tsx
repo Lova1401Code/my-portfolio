@@ -1,10 +1,12 @@
 import { AboutSection } from './components/sections/AboutSection'
-import { BlogSection } from './components/sections/BlogSection'
 import { ClientsSection } from './components/sections/ClientsSection'
 import { ContactSection } from './components/sections/ContactSection'
 import { CtaBannerSection } from './components/sections/CtaBannerSection'
+import { EducationSection } from './components/sections/EducationSection'
+import { ExperienceSection } from './components/sections/ExperienceSection'
 import { HeroSection } from './components/sections/HeroSection'
 import { PortfolioSection } from './components/sections/PortfolioSection'
+import { StackSection } from './components/sections/StackSection'
 import { ServicesSection } from './components/sections/ServicesSection'
 import { TestimonialSection } from './components/sections/TestimonialSection'
 import { WorkProcessSection } from './components/sections/WorkProcessSection'
@@ -17,11 +19,13 @@ export default function App() {
       <Header />
       <main>
         <HeroSection />
+        <StackSection />
         <AboutSection />
+        <ExperienceSection />
+        <EducationSection />
         <WorkProcessSection />
         <PortfolioSection />
         <CtaBannerSection />
-        <BlogSection />
         <ServicesSection />
         <ClientsSection />
         <TestimonialSection />

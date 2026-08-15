@@ -18,7 +18,7 @@ function DownloadIcon() {
 
 export function AboutSection() {
   return (
-    <section id="apropos" className="py-16 md:py-24">
+    <section id="apropos" className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-16 md:py-24">
       <Container>
         <div className="rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-100 md:p-10 lg:p-12">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">

@@ -1,14 +1,7 @@
 import { type FormEvent, type InputHTMLAttributes, useState } from 'react'
 import { Container } from '../Container'
 import { Button } from '../Button'
-import { contactInfo } from '../../site-content'
-
-const socialRow = [
-  { label: 'LinkedIn', href: '#' },
-  { label: 'Twitter', href: '#' },
-  { label: 'Dribbble', href: '#' },
-  { label: 'Behance', href: '#' },
-] as const
+import { contactInfo, socialLinks } from '../../site-content'
 
 function Field({
   id,
@@ -41,7 +34,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="bg-slate-50 py-16 md:py-24">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-b from-sky-50/40 via-white to-white py-16 md:py-24">
       <Container>
         <div className="grid gap-10 rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-100 md:p-10 lg:grid-cols-2 lg:gap-14 lg:p-12">
           <div>
@@ -93,14 +86,14 @@ export function ContactSection() {
             </ul>
 
             <div className="mt-8 flex gap-3">
-              {socialRow.map((s) => (
+              {socialLinks.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-xs font-semibold text-slate-600 transition hover:border-brand-200 hover:text-brand-600"
                 >
-                  {s.label[0]}
+                  {s.short}
                 </a>
               ))}
             </div>

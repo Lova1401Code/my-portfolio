@@ -1,28 +1,20 @@
 import { Container } from '../Container'
-import { clientLogos } from '../../site-content'
+import { collaborationHighlight } from '../../site-content'
 
 export function ClientsSection() {
   return (
-    <section className="border-y border-slate-100 bg-white py-14 md:py-16">
+    <section className="relative overflow-hidden border-y border-slate-100 bg-gradient-to-b from-white via-purple-50/30 to-white py-14 md:py-16">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl rounded-2xl bg-slate-50 p-8 text-center ring-1 ring-slate-100 md:p-10">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-            Ils me font confiance
+            {collaborationHighlight.title}
           </h2>
-          <p className="mt-2 text-sm text-slate-600 md:text-base">
-            Collaborations avec des équipes produit, marketing et tech.
+          <p className="mt-4 text-slate-600 leading-relaxed">
+            {collaborationHighlight.body}
           </p>
-        </div>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          {clientLogos.map((c) => (
-            <div
-              key={c.name}
-              className="flex h-12 min-w-[5.5rem] items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm font-semibold tracking-wide text-slate-400 grayscale transition hover:grayscale-0"
-              title={c.name}
-            >
-              {c.abbr}
-            </div>
-          ))}
+          <p className="mt-6 text-sm font-medium text-brand-700">
+            React · Next.js · NestJS · React Native · PostgreSQL · Prisma · Stripe · Git
+          </p>
         </div>
       </Container>
     </section>

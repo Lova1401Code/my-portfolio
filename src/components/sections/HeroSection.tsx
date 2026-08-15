@@ -45,7 +45,7 @@ export function HeroSection() {
   return (
     <section
       id="accueil"
-      className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-sky-50 pb-16 pt-32 md:pb-24 md:pt-36"
+      className="relative overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white pb-20 pt-32 md:pb-28 md:pt-36"
     >
       <div
         className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-purple-200/40 blur-3xl"

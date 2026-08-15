@@ -13,6 +13,8 @@ export const navLinks = [
   { href: '#accueil', label: 'Accueil' },
   { href: '#stack', label: 'Stack' },
   { href: '#apropos', label: 'À propos' },
+  { href: '#experiences', label: 'Expériences' },
+  { href: '#formation', label: 'Formation' },
   { href: '#processus', label: 'Processus' },
   { href: '#portfolio', label: 'Portfolio' },
   { href: '#services', label: 'Services' },
@@ -70,50 +72,111 @@ export const workSteps = [
   },
 ] as const
 
+export const experiences = [
+  {
+    period: '2024 — Présent',
+    role: 'Développeur full stack',
+    company: 'Entreprise exemple',
+    description:
+      "Conception et développement d'applications web et mobiles avec React, Next.js et NestJS. Intégration de paiements Stripe et gestion de bases de données PostgreSQL via Prisma.",
+    type: 'job' as const,
+  },
+  {
+    period: '2023 — 2024',
+    role: 'Développeur freelance',
+    company: 'Projets indépendants',
+    description:
+      "Création de sites WordPress sur mesure, développement d'APIs et de dashboards pour clients. Mise en place de CI/CD et optimisation des performances.",
+    type: 'freelance' as const,
+  },
+  {
+    period: '2023',
+    role: 'Stagiaire développeur',
+    company: 'Studio numérique exemple',
+    description:
+      "Participation au développement d'une plateforme streaming en équipe. Travail sur le front (React) et le back (NestJS, WebSocket).",
+    type: 'intern' as const,
+  },
+] as const
+
+export const education = [
+  {
+    year: '2023 — 2024',
+    title: 'Licence en développement web',
+    school: 'Université exemple',
+    description:
+      "Formation axée sur le développement full stack, architectures web, bases de données et bonnes pratiques de versionnement.",
+  },
+  {
+    year: '2022 — 2023',
+    title: 'BTS en informatique',
+    school: 'Institut exemple',
+    description:
+      "Bases de la programmation, algorithmique, réseaux et développement d'applications.",
+  },
+  {
+    year: '2024',
+    title: 'Certification React avancé',
+    school: 'Plateforme en ligne',
+    description:
+      "Maîtrise des patterns avancés React : hooks personnalisés, context, performance et tests.",
+  },
+] as const
+
 /** Logos via CDN publics (Devicon / Simple Icons). */
 export const techStack = [
   {
     name: 'React',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+    dark: false,
   },
   {
     name: 'Next.js',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+    dark: true,
   },
   {
     name: 'React Native',
-    logoUrl: 'https://reactnative.dev/img/header_logo.svg',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+    dark: false,
   },
   {
     name: 'NestJS',
     logoUrl:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-plain.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg',
+    dark: false,
   },
   {
     name: 'WordPress',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg',
+    dark: false,
   },
   {
     name: 'PostgreSQL',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
+    dark: false,
   },
   {
     name: 'Prisma',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg',
+    dark: false,
   },
   {
     name: 'Stripe',
     logoUrl: 'https://cdn.simpleicons.org/stripe/635BFF',
+    dark: false,
   },
   {
     name: 'Git',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+    dark: false,
   },
 ] as const
 
