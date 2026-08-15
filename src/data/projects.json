@@ -1,0 +1,113 @@
+[
+  {
+    "titre_du_projet": "Fanorona – Jeu de Plateau en Ligne",
+    "description_projet": "Version web du jeu de plateau traditionnel malgache, incluant un mode solo et un mode multijoueur avec synchronisation en temps réel.",
+    "image": "https://picsum.photos/seed/fanorona-board-game/800/600",
+    "date": "2024-09-04",
+    "techno_utilisee": [
+      "Next.js",
+      "Nest.js",
+      "WebSocket (Socket.IO)",
+      "MUI",
+      "SVG",
+      "Docker"
+    ],
+    "fonctionnalite_principale": [
+      "Mode solo avec règles officielles (déplacement, capture par approche/retrait)",
+      "Mode multijoueur en temps réel (WebSocket)",
+      "Création et gestion de salles de jeu",
+      "Animation des captures",
+      "Validation des mouvements et gestion des tours"
+    ],
+    "approche_technique": "Architecture séparée Frontend (Next.js) / Backend (Nest.js) avec Docker. Communication temps réel via WebSocket (Socket.IO). Interface stylisée avec MUI et plateau de jeu dessiné dynamiquement en SVG.",
+    "resultat": "Jeu fonctionnel en solo avec une interface moderne. Le mode multijoueur est en cours de développement (gestion avancée des règles, annulation, chronomètre).",
+    "lien_git": "https://github.com/al7373/fanorona-next",
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "Site Web de Présentation de l'Entreprise – STMTP Antananarivo",
+    "description_projet": "Développement et maintenance du site web officiel pour STMTP, entreprise de construction et remblayage. Objectif : vitrine professionnelle et génération de leads.",
+    "image": "https://picsum.photos/seed/stmtp-construction-company/800/600",
+    "date": "2025-03-07",
+    "techno_utilisee": ["WordPress", "HTML", "CSS", "JavaScript"],
+    "fonctionnalite_principale": [
+      "Présentation détaillée des services (construction, remblayage, TP)",
+      "Portfolio de réalisations avec galeries d'images",
+      "Formulaire de contact pour devis",
+      "Blog d'entreprise pour le SEO et l'engagement"
+    ],
+    "approche_technique": "Site développé sous WordPress pour une gestion facile par le client. Design responsive et optimisation SEO (mots-clés, structure).",
+    "resultat": "Présence en ligne renforcée, outil de génération de leads et de communication pour l'entreprise.",
+    "lien_git": null,
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "IANATRA – Application de Gestion Scolaire",
+    "description_projet": "Application web complète pour la gestion d'établissement scolaire : inscriptions, classes, enseignants, élèves, notes, emplois du temps et communication.",
+    "image": "https://picsum.photos/seed/ianatra-school-management/800/600",
+    "date": "2022-07-29",
+    "techno_utilisee": ["Laravel", "Vue.js", "MySQL"],
+    "fonctionnalite_principale": [
+      "Gestion des inscriptions et tableau de bord administrateur",
+      "Gestion des classes, cours et assignment des enseignants",
+      "Saisie des notes et génération de bulletins",
+      "Gestion des emplois du temps",
+      "Système de messagerie interne"
+    ],
+    "approche_technique": "Backend avec API RESTful Laravel (gestion utilisateurs, rôles). Frontend dynamique avec Vue.js. Base de données MySQL optimisée pour les requêtes.",
+    "resultat": "Solution centralisée pour la gestion académique et administrative, accessible aux différents rôles (admin, enseignant, parent, élève).",
+    "lien_git": null,
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "EnecMad.com – Présentation de la Société EnecMad",
+    "description_projet": "Site web officiel pour EnecMad (services : panneaux photovoltaïques, électricité, captage d'eau). Objectif : vitrine informative et génération de contacts.",
+    "image": "https://picsum.photos/seed/enecmad-solar-energy/800/600",
+    "date": "2025-03-07",
+    "techno_utilisee": ["WordPress", "HTML", "CSS", "JavaScript"],
+    "fonctionnalite_principale": [
+      "Page d'accueil présentant les services",
+      "Pages dédiées pour chaque service (captage eau, électricité, photovoltaïque)",
+      "Blog pour le contenu éditorial (SEO)",
+      "Page de contact avec formulaire"
+    ],
+    "approche_technique": "Site vitrine sous WordPress, responsive. Contenu structuré pour présenter l'expertise.",
+    "resultat": "Renforcement de la présence en ligne, outil de génération de leads et de crédibilité pour l'entreprise.",
+    "lien_git": null,
+    "lien_autre": "https://enecmad.com"
+  },
+  {
+    "titre_du_projet": "Take a Look – Application de Surveillance Domestique en 3D",
+    "description_projet": "Application de surveillance domestique immersive avec modélisation 3D de la maison. Développée en équipe lors d'un hackathon inter-universitaire.",
+    "image": "https://picsum.photos/seed/takealook-3d-security/800/600",
+    "date": "2025-03-07",
+    "techno_utilisee": ["Three.js", "Django", "Node.js", "Flutter", "Vue.js"],
+    "fonctionnalite_principale": [
+      "Modélisation 3D de la maison avec Three.js",
+      "Intégration des flux vidéo des caméras dans l'interface 3D",
+      "Notifications d'alerte (mouvement suspect)",
+      "Application multiplateforme (mobile Flutter, web Vue.js)"
+    ],
+    "approche_technique": "Frontend 3D avec Three.js. Backend Django (gestion, données) et Node.js (traitement flux vidéo temps réel). Applications mobiles et web séparées.",
+    "resultat": "Projet innovant et bien accueilli au hackathon, démontrant le potentiel de la 3D pour la sécurité domestique.",
+    "lien_git": null,
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "Application de Gestion de Stock",
+    "description_projet": "Application complète pour la gestion d'inventaire, de commandes et de fournisseurs, développée dans le cadre d'un parcours en Génie Logiciel.",
+    "image": "https://picsum.photos/seed/stock-inventory-app/800/600",
+    "date": "2025-03-07",
+    "techno_utilisee": ["Laravel", "React.js", "MySQL"],
+    "fonctionnalite_principale": [
+      "Suivi des inventaires en temps réel et alertes de stock faible",
+      "Gestion complète des commandes (CRUD, suivi)",
+      "Base de données centralisée des fournisseurs",
+      "Génération de rapports et analyses (tendances, performance)"
+    ],
+    "approche_technique": "Backend API RESTful avec Laravel (gestion CRUD, utilisateurs, rôles). Frontend dynamique et réactif avec React.js. Base de données relationnelle MySQL.",
+    "resultat": "Solution robuste réduisant les risques de rupture de stock et améliorant la gestion des commandes. Application extensible.",
+    "lien_git": null,
+    "lien_autre": null
+  }
+]
