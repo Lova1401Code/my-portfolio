@@ -3,9 +3,8 @@ import { projects } from './data/projects'
 export const author = {
   brandTitle: 'Lova Ramiharisoa',
   logoInitial: 'LR',
-  /** Remplacez par votre nom si vous souhaitez l’afficher dans le hero. */
-  displayName: 'Développeur full stack',
-  tagline: 'Développeur full stack',
+  displayName: 'Full-Stack Developer',
+  tagline: 'Full-Stack Developer | DevOps & Infrastructure',
   whatsappHref: 'https://wa.me/261334393443',
 } as const
 
@@ -21,16 +20,25 @@ export const navLinks = [
   { href: '#contact', label: 'Contact' },
 ] as const
 
+export const headerNavLinks = [
+  { href: '#accueil', label: 'Accueil' },
+  { href: '#apropos', label: 'À propos' },
+  { href: '#experiences', label: 'Expériences' },
+  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#services', label: 'Services' },
+  { href: '#contact', label: 'Contact' },
+] as const
+
 export const hero = {
-  title: 'Bonjour, je suis développeur full stack',
+  title: 'Full-Stack Developer | DevOps & Infrastructure',
   subtitle:
-    "Spécialisé en React, Next.js, React Native, NestJS, WordPress, PostgreSQL, Prisma et Stripe. J'aime construire des produits web et mobiles solides, avec une base de données propre et des paiements fiables.",
+    "Je développe des applications web et mobiles avec React, Next.js et NestJS. Compétences complémentaires en DevOps (Docker, CI/CD, Nginx) et en systèmes & réseaux (Linux, TCP/IP, routage) pour déployer et faire fonctionner ce que je construis.",
   stats: [
     { value: '2+', label: "Années d'expérience", icon: 'briefcase' as const },
     { value: String(projects.length), label: 'Projets', icon: 'layers' as const },
     {
-      value: '≈1 an',
-      label: 'Projet streaming (équipe)',
+      value: '3',
+      label: 'Full-Stack · DevOps · Réseaux',
       icon: 'users' as const,
     },
   ],
@@ -39,9 +47,9 @@ export const hero = {
 export const about = {
   title: 'À propos de moi',
   paragraphs: [
-    "Développeur avec 2 ans d'expérience, je collabore actuellement avec deux freelances sur une plateforme de streaming depuis environ un an : stack React, Next.js, NestJS, React Native, PostgreSQL, Prisma et Stripe.",
-    "Je conçois et maintiens des interfaces web, des APIs et des applications mobiles, en soignant l'architecture et la qualité du code (Git, revues, bonnes pratiques).",
-    "Diplômé d'un master en génie logiciel à l'EPSA d'Antsirabe, je combine formation académique et projets concrets (jeux en ligne, sites vitrines WordPress, gestion scolaire, etc.).",
+    "Développeur Full-Stack orienté développement logiciel, je conçois des applications métier, des architectures frontend/backend et des bases de données avec React, Next.js, NestJS, PostgreSQL et Prisma. Je m'intéresse également à Linux, Docker, la CI/CD et l'infrastructure de déploiement.",
+    "J'ai des connaissances pratiques en systèmes et réseaux : TCP/IP, DNS, DHCP, VLAN, routage et adressage IP. Cette compréhension des infrastructures me permet de raisonner au-delà du code, jusqu'à l'environnement qui fait fonctionner une application.",
+    "Profil polyvalent mais cohérent : je développe des applications, je sais les déployer, je comprends l'infrastructure qui les supporte. Je m'intéresse particulièrement à la digitalisation des entreprises et aux environnements industriels, où ces compétences combinées prennent tout leur sens.",
   ],
 }
 
@@ -50,51 +58,51 @@ export const workSteps = [
     step: '1',
     title: 'Analyse & cadrage',
     description:
-      'Compréhension du besoin, contraintes techniques, modèle de données et périmètre fonctionnel.',
+      "Compréhension du besoin, contraintes techniques, modèle de données et périmètre fonctionnel.",
   },
   {
     step: '2',
     title: 'Architecture',
     description:
-      'Choix des stacks (front, API, mobile), structure des modules et stratégie de déploiement.',
+      "Choix des stacks (front, API, mobile), structure des modules, authentification JWT et stratégie de déploiement.",
   },
   {
     step: '3',
     title: 'Développement',
     description:
-      'Itérations courtes, API REST/ temps réel, intégration Prisma/Stripe, composants UI réutilisables.',
+      "Itérations courtes, APIs REST, intégration Prisma/PostgreSQL, authentification et composants UI réutilisables.",
   },
   {
     step: '4',
-    title: 'Livraison',
+    title: 'Livraison & déploiement',
     description:
-      'Tests, documentation, mise en production et suivi des correctifs avec Git.',
+      "Conteneurisation Docker, CI/CD, tests, mise en production et monitoring avec Git.",
   },
 ] as const
 
 export const experiences = [
   {
     period: '2024 — Présent',
-    role: 'Développeur full stack',
-    company: 'Entreprise exemple',
+    role: 'Développeur Full-Stack',
+    company: 'Plateforme streaming (équipe)',
     description:
-      "Conception et développement d'applications web et mobiles avec React, Next.js et NestJS. Intégration de paiements Stripe et gestion de bases de données PostgreSQL via Prisma.",
+      "Développement d'une plateforme de streaming avec React, React Native, NestJS, PostgreSQL et Prisma. Architecture frontend/backend, authentification JWT, streaming vidéo HLS et déploiement Docker.",
     type: 'job' as const,
   },
   {
     period: '2023 — 2024',
-    role: 'Développeur freelance',
+    role: 'Développeur Full-Stack freelance',
     company: 'Projets indépendants',
     description:
-      "Création de sites WordPress sur mesure, développement d'APIs et de dashboards pour clients. Mise en place de CI/CD et optimisation des performances.",
+      "Création d'applications métier et de sites web pour clients. Développement frontend/backend, mise en place de CI/CD avec GitHub Actions et déploiement sous Docker/Nginx.",
     type: 'freelance' as const,
   },
   {
     period: '2023',
     role: 'Stagiaire développeur',
-    company: 'Studio numérique exemple',
+    company: 'Studio numérique',
     description:
-      "Participation au développement d'une plateforme streaming en équipe. Travail sur le front (React) et le back (NestJS, WebSocket).",
+      "Participation au développement d'une application web en équipe. Travail sur le front (React) et le back (NestJS, API REST), et initiation aux pratiques DevOps.",
     type: 'intern' as const,
   },
 ] as const
@@ -102,24 +110,24 @@ export const experiences = [
 export const education = [
   {
     year: '2023 — 2024',
-    title: 'Licence en développement web',
-    school: 'Université exemple',
+    title: 'Master en génie logiciel',
+    school: 'EPSA Antsirabe',
     description:
-      "Formation axée sur le développement full stack, architectures web, bases de données et bonnes pratiques de versionnement.",
+      "Formation axée sur le développement full stack, les architectures web, les bases de données et les bonnes pratiques de versionnement.",
   },
   {
     year: '2022 — 2023',
-    title: 'BTS en informatique',
-    school: 'Institut exemple',
+    title: 'Formation systèmes & réseaux',
+    school: 'Formation pratique',
     description:
-      "Bases de la programmation, algorithmique, réseaux et développement d'applications.",
+      "Fondamentaux réseaux : TCP/IP, DNS, DHCP, VLAN, routage, adressage IP et configuration d'équipements avec Cisco Packet Tracer.",
   },
   {
     year: '2024',
-    title: 'Certification React avancé',
-    school: 'Plateforme en ligne',
+    title: 'Certification DevOps & Docker',
+    school: 'Formation en ligne',
     description:
-      "Maîtrise des patterns avancés React : hooks personnalisés, context, performance et tests.",
+      "Conteneurisation Docker, pipelines CI/CD avec GitHub Actions, déploiement, Nginx et monitoring.",
   },
 ] as const
 
@@ -150,9 +158,9 @@ export const techStack = [
     dark: false,
   },
   {
-    name: 'WordPress',
+    name: 'Node.js',
     logoUrl:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
     dark: false,
   },
   {
@@ -168,8 +176,9 @@ export const techStack = [
     dark: false,
   },
   {
-    name: 'Stripe',
-    logoUrl: 'https://cdn.simpleicons.org/stripe/635BFF',
+    name: 'Tailwind CSS',
+    logoUrl:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
     dark: false,
   },
   {
@@ -182,32 +191,32 @@ export const techStack = [
 
 export const services = [
   {
-    title: 'Applications web (React / Next.js)',
+    title: 'Applications web & mobiles (React / Next.js / NestJS)',
     description:
-      'Interfaces modernes, SSR/SSG avec Next.js, composants réutilisables et intégration API (REST, WebSocket).',
+      "Frontend, backend, APIs REST, authentification JWT et composants réutilisables. Applications métier avec architecture frontend/backend et base de données PostgreSQL via Prisma.",
   },
   {
-    title: 'Mobile & backends (React Native / NestJS)',
+    title: 'DevOps & déploiement',
     description:
-      'Applications mobiles connectées à des APIs NestJS, validation, auth, temps réel si besoin.',
+      "Conteneurisation Docker, pipelines CI/CD avec GitHub Actions, déploiement Nginx, monitoring et logs. Capacité à déployer et maintenir ce que je développe.",
   },
   {
-    title: 'Données, paiements & WordPress',
+    title: 'Systèmes & réseaux',
     description:
-      'Modélisation PostgreSQL avec Prisma, paiements Stripe, et sites vitrines ou blogs sous WordPress.',
+      "Linux, TCP/IP, DNS, DHCP, VLAN, routage et adressage IP. Compréhension des infrastructures réseau et des environnements IT et industriels.",
   },
 ] as const
 
 export const collaborationHighlight = {
-  title: 'Projet en cours',
-  body: "Plateforme de streaming — équipe de trois (moi + deux freelances), depuis environ un an : React, Next.js, NestJS, React Native, PostgreSQL, Prisma, Stripe, Git.",
+  title: 'Projet phare',
+  body: "Plateforme de streaming — application Full-Stack complexe : React, React Native, NestJS, PostgreSQL, Prisma, streaming vidéo HLS, continue watching et authentification JWT.",
 }
 
 export const testimonial = {
   quote:
-    "Une collaboration sérieuse sur la partie technique : code structuré, bonnes pratiques Git, et une communication claire sur les choix d'architecture (API, base, mobile).",
-  author: 'Équipe projet streaming',
-  role: 'Collaboration freelance',
+    "Un profil qui couvre toute la chaîne : développement frontend/backend propre, déploiement Docker et compréhension de l'infrastructure réseau. Une capacité rare à raisonner du code jusqu'à la production.",
+  author: 'Collaborateur projet',
+  role: 'Équipe streaming',
 }
 
 export const socialLinks = [

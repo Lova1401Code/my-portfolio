@@ -1,112 +1,168 @@
 [
   {
-    "titre_du_projet": "Fanorona – Jeu de Plateau en Ligne",
-    "description_projet": "Version web du jeu de plateau traditionnel malgache, incluant un mode solo et un mode multijoueur avec synchronisation en temps réel.",
-    "image": "https://picsum.photos/seed/fanorona-board-game/800/600",
-    "date": "2024-09-04",
+    "titre_du_projet": "Streaming Platform",
+    "description_projet": "Plateforme de streaming vidéo Full-Stack avec application web et mobile, authentification, gestion des utilisateurs et suivi de progression.",
+    "image": "https://picsum.photos/seed/streaming-platform-hls/800/600",
+    "date": "2024-06-15",
+    "techno_utilisee": [
+      "React",
+      "React Native",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "REST API",
+      "JWT"
+    ],
+    "fonctionnalite_principale": [
+      "Authentification et gestion des utilisateurs (JWT)",
+      "Streaming vidéo HLS avec gestion du lecteur",
+      "Suivi de progression et continue watching",
+      "Téléchargement de contenu pour hors-ligne",
+      "Architecture frontend/backend séparée"
+    ],
+    "approche_technique": "Architecture frontend/backend : React et React Native côté client, NestJS et PostgreSQL côté serveur via Prisma. APIs REST pour la communication, authentification JWT et streaming vidéo HLS.",
+    "resultat": "Projet Full-Stack complexe démontrant la capacité à concevoir une application multi-composants avec authentification, streaming vidéo et suivi d'état utilisateur.",
+    "lien_git": null,
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "Industrial Management — Suivi d'équipements",
+    "description_projet": "Application de gestion et de monitoring industriel : suivi des machines, maintenance, incidents et production. Conçue pour les entreprises industrielles.",
+    "image": "https://picsum.photos/seed/industrial-monitoring-machines/800/600",
+    "date": "2025-01-20",
+    "techno_utilisee": [
+      "React",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "Docker",
+      "Linux"
+    ],
+    "fonctionnalite_principale": [
+      "Dashboard de suivi de l'état des équipements",
+      "Gestion des machines et historique de maintenance",
+      "Suivi des incidents et des alertes",
+      "Suivi de la production",
+      "Gestion des utilisateurs et rôles",
+      "Monitoring et logs (planned feature)"
+    ],
+    "approche_technique": "Application web React connectée à une API NestJS avec PostgreSQL via Prisma. Déploiement conteneurisé Docker sur Linux. Architecture pensée pour un contexte industriel.",
+    "resultat": "Projet démontrant comment le développement logiciel, DevOps et la compréhension des infrastructures s'intègrent dans un environnement industriel.",
+    "lien_git": null,
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "CRM — Gestion clients et contacts",
+    "description_projet": "Application métier CRM pour la gestion des clients, contacts et tâches. Dashboard centralisé pour organiser les données de l'entreprise.",
+    "image": "https://picsum.photos/seed/crm-business-app/800/600",
+    "date": "2024-10-10",
+    "techno_utilisee": [
+      "React",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "JWT"
+    ],
+    "fonctionnalite_principale": [
+      "Gestion des clients et contacts (CRUD)",
+      "Gestion des tâches et suivi",
+      "Authentification et gestion des utilisateurs",
+      "Dashboard avec organisation des données",
+      "Architecture frontend/backend"
+    ],
+    "approche_technique": "Frontend React connecté à une API REST NestJS. Base de données PostgreSQL gérée via Prisma. Authentification JWT et architecture frontend/backend.",
+    "resultat": "Application métier démontrant la capacité à créer des outils destinés aux besoins réels des entreprises.",
+    "lien_git": null,
+    "lien_autre": null
+  },
+  {
+    "titre_du_projet": "School Management — Gestion scolaire",
+    "description_projet": "Plateforme de gestion scolaire multi-rôles : étudiants, enseignants, parents, classes, cours, exercices et paiements.",
+    "image": "https://picsum.photos/seed/school-management-rbac/800/600",
+    "date": "2024-03-12",
     "techno_utilisee": [
       "Next.js",
-      "Nest.js",
-      "WebSocket (Socket.IO)",
-      "MUI",
-      "SVG",
-      "Docker"
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "JWT",
+      "RBAC"
     ],
     "fonctionnalite_principale": [
-      "Mode solo avec règles officielles (déplacement, capture par approche/retrait)",
-      "Mode multijoueur en temps réel (WebSocket)",
-      "Création et gestion de salles de jeu",
-      "Animation des captures",
-      "Validation des mouvements et gestion des tours"
+      "Gestion des étudiants, enseignants et parents",
+      "Gestion des classes, cours et exercices",
+      "Suivi des paiements",
+      "Rôles et permissions (RBAC) multi-utilisateurs",
+      "Authentification JWT et dashboard par rôle"
     ],
-    "approche_technique": "Architecture séparée Frontend (Next.js) / Backend (Nest.js) avec Docker. Communication temps réel via WebSocket (Socket.IO). Interface stylisée avec MUI et plateau de jeu dessiné dynamiquement en SVG.",
-    "resultat": "Jeu fonctionnel en solo avec une interface moderne. Le mode multijoueur est en cours de développement (gestion avancée des règles, annulation, chronomètre).",
-    "lien_git": "https://github.com/al7373/fanorona-next",
-    "lien_autre": null
-  },
-  {
-    "titre_du_projet": "Site Web de Présentation de l'Entreprise – STMTP Antananarivo",
-    "description_projet": "Développement et maintenance du site web officiel pour STMTP, entreprise de construction et remblayage. Objectif : vitrine professionnelle et génération de leads.",
-    "image": "https://picsum.photos/seed/stmtp-construction-company/800/600",
-    "date": "2025-03-07",
-    "techno_utilisee": ["WordPress", "HTML", "CSS", "JavaScript"],
-    "fonctionnalite_principale": [
-      "Présentation détaillée des services (construction, remblayage, TP)",
-      "Portfolio de réalisations avec galeries d'images",
-      "Formulaire de contact pour devis",
-      "Blog d'entreprise pour le SEO et l'engagement"
-    ],
-    "approche_technique": "Site développé sous WordPress pour une gestion facile par le client. Design responsive et optimisation SEO (mots-clés, structure).",
-    "resultat": "Présence en ligne renforcée, outil de génération de leads et de communication pour l'entreprise.",
+    "approche_technique": "Frontend Next.js avec API NestJS. Base de données PostgreSQL via Prisma. Contrôle d'accès basé sur les rôles (RBAC) et authentification JWT.",
+    "resultat": "Application métier multi-rôles démontrant la capacité à concevoir des systèmes avec plusieurs types d'utilisateurs et permissions.",
     "lien_git": null,
     "lien_autre": null
   },
   {
-    "titre_du_projet": "IANATRA – Application de Gestion Scolaire",
-    "description_projet": "Application web complète pour la gestion d'établissement scolaire : inscriptions, classes, enseignants, élèves, notes, emplois du temps et communication.",
-    "image": "https://picsum.photos/seed/ianatra-school-management/800/600",
-    "date": "2022-07-29",
-    "techno_utilisee": ["Laravel", "Vue.js", "MySQL"],
-    "fonctionnalite_principale": [
-      "Gestion des inscriptions et tableau de bord administrateur",
-      "Gestion des classes, cours et assignment des enseignants",
-      "Saisie des notes et génération de bulletins",
-      "Gestion des emplois du temps",
-      "Système de messagerie interne"
+    "titre_du_projet": "Task Manager — Gestion de tâches",
+    "description_projet": "Application Full-Stack de gestion de tâches : création, modification, suppression et organisation. Démonstration des fondamentaux Full-Stack.",
+    "image": "https://picsum.photos/seed/task-manager-crud/800/600",
+    "date": "2024-08-05",
+    "techno_utilisee": [
+      "React",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL"
     ],
-    "approche_technique": "Backend avec API RESTful Laravel (gestion utilisateurs, rôles). Frontend dynamique avec Vue.js. Base de données MySQL optimisée pour les requêtes.",
-    "resultat": "Solution centralisée pour la gestion académique et administrative, accessible aux différents rôles (admin, enseignant, parent, élève).",
+    "fonctionnalite_principale": [
+      "Création, modification et suppression de tâches (CRUD)",
+      "Organisation et catégorisation",
+      "Authentification utilisateur",
+      "API REST et base de données"
+    ],
+    "approche_technique": "Frontend React connecté à une API NestJS. Persistance des données avec PostgreSQL via Prisma. Architecture frontend/backend classique.",
+    "resultat": "Projet démontrant les fondamentaux Full-Stack : CRUD, API, base de données et authentification.",
     "lien_git": null,
     "lien_autre": null
   },
   {
-    "titre_du_projet": "EnecMad.com – Présentation de la Société EnecMad",
-    "description_projet": "Site web officiel pour EnecMad (services : panneaux photovoltaïques, électricité, captage d'eau). Objectif : vitrine informative et génération de contacts.",
-    "image": "https://picsum.photos/seed/enecmad-solar-energy/800/600",
-    "date": "2025-03-07",
-    "techno_utilisee": ["WordPress", "HTML", "CSS", "JavaScript"],
-    "fonctionnalite_principale": [
-      "Page d'accueil présentant les services",
-      "Pages dédiées pour chaque service (captage eau, électricité, photovoltaïque)",
-      "Blog pour le contenu éditorial (SEO)",
-      "Page de contact avec formulaire"
+    "titre_du_projet": "Network Infrastructure — Cisco Packet Tracer",
+    "description_projet": "Conception et configuration d'une infrastructure réseau avec Cisco Packet Tracer : adressage IP, subnetting, VLAN, routage et DHCP.",
+    "image": "https://picsum.photos/seed/cisco-network-vlan-routing/800/600",
+    "date": "2023-11-18",
+    "techno_utilisee": [
+      "Cisco Packet Tracer",
+      "TCP/IP",
+      "DHCP",
+      "VLAN",
+      "Routing"
     ],
-    "approche_technique": "Site vitrine sous WordPress, responsive. Contenu structuré pour présenter l'expertise.",
-    "resultat": "Renforcement de la présence en ligne, outil de génération de leads et de crédibilité pour l'entreprise.",
-    "lien_git": null,
-    "lien_autre": "https://enecmad.com"
-  },
-  {
-    "titre_du_projet": "Take a Look – Application de Surveillance Domestique en 3D",
-    "description_projet": "Application de surveillance domestique immersive avec modélisation 3D de la maison. Développée en équipe lors d'un hackathon inter-universitaire.",
-    "image": "https://picsum.photos/seed/takealook-3d-security/800/600",
-    "date": "2025-03-07",
-    "techno_utilisee": ["Three.js", "Django", "Node.js", "Flutter", "Vue.js"],
     "fonctionnalite_principale": [
-      "Modélisation 3D de la maison avec Three.js",
-      "Intégration des flux vidéo des caméras dans l'interface 3D",
-      "Notifications d'alerte (mouvement suspect)",
-      "Application multiplateforme (mobile Flutter, web Vue.js)"
+      "Conception réseau et adressage IP avec subnetting",
+      "Configuration de VLAN et routage inter-réseaux",
+      "Configuration DHCP automatique",
+      "Configuration des équipements réseau",
+      "Tests de connectivité entre réseaux"
     ],
-    "approche_technique": "Frontend 3D avec Three.js. Backend Django (gestion, données) et Node.js (traitement flux vidéo temps réel). Applications mobiles et web séparées.",
-    "resultat": "Projet innovant et bien accueilli au hackathon, démontrant le potentiel de la 3D pour la sécurité domestique.",
+    "approche_technique": "Simulation d'infrastructure réseau avec Cisco Packet Tracer. Mise en œuvre de TCP/IP, VLAN, routage et DHCP avec communication entre plusieurs sous-réseaux.",
+    "resultat": "Démonstration des compétences systèmes & réseaux : capacité à concevoir et configurer une infrastructure réseau, au-delà du seul développement logiciel.",
     "lien_git": null,
     "lien_autre": null
   },
   {
-    "titre_du_projet": "Application de Gestion de Stock",
-    "description_projet": "Application complète pour la gestion d'inventaire, de commandes et de fournisseurs, développée dans le cadre d'un parcours en Génie Logiciel.",
-    "image": "https://picsum.photos/seed/stock-inventory-app/800/600",
-    "date": "2025-03-07",
-    "techno_utilisee": ["Laravel", "React.js", "MySQL"],
-    "fonctionnalite_principale": [
-      "Suivi des inventaires en temps réel et alertes de stock faible",
-      "Gestion complète des commandes (CRUD, suivi)",
-      "Base de données centralisée des fournisseurs",
-      "Génération de rapports et analyses (tendances, performance)"
+    "titre_du_projet": "Personal Portfolio",
+    "description_projet": "Site portfolio personnel développé en React avec Tailwind CSS. Design responsive et organisation du code soignée.",
+    "image": "https://picsum.photos/seed/personal-portfolio-react/800/600",
+    "date": "2025-02-01",
+    "techno_utilisee": [
+      "React",
+      "Tailwind CSS"
     ],
-    "approche_technique": "Backend API RESTful avec Laravel (gestion CRUD, utilisateurs, rôles). Frontend dynamique et réactif avec React.js. Base de données relationnelle MySQL.",
-    "resultat": "Solution robuste réduisant les risques de rupture de stock et améliorant la gestion des commandes. Application extensible.",
+    "fonctionnalite_principale": [
+      "Développement frontend responsive",
+      "UI/UX et design moderne",
+      "Performance et optimisation",
+      "Organisation du code en composants réutilisables"
+    ],
+    "approche_technique": "Application React avec Tailwind CSS. Architecture en composants, design responsive et attention portée à la performance.",
+    "resultat": "Projet personnel professionnel présentant mes réalisations et mon positionnement Full-Stack, DevOps et systèmes & réseaux.",
     "lien_git": null,
     "lien_autre": null
   }

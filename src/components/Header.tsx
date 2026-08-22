@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { author, navLinks } from '../site-content'
+import { author, headerNavLinks, navLinks } from '../site-content'
 
 function WhatsAppIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -31,17 +31,17 @@ export function Header() {
       >
         <a
           href="#accueil"
-          className="flex items-center gap-3 text-slate-900"
+          className="flex items-center gap-2.5 text-slate-900 lg:gap-3"
           onClick={() => setOpen(false)}
         >
           <span
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-sm font-extrabold tracking-tight text-white shadow-md shadow-brand-600/30 ring-1 ring-white/20 transition-transform duration-300 hover:scale-105"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-sm font-extrabold tracking-tight text-white shadow-md shadow-brand-600/30 ring-1 ring-white/20 transition-transform duration-300 hover:scale-105"
             aria-hidden
           >
             {author.logoInitial}
           </span>
           <span className="flex flex-col leading-none">
-            <span className="text-base font-bold tracking-tight text-slate-900">
+            <span className="text-sm font-bold tracking-tight text-slate-900 lg:text-base">
               {author.brandTitle}
             </span>
             <span className="mt-0.5 text-[11px] font-medium text-slate-500">
@@ -51,21 +51,21 @@ export function Header() {
         </a>
 
         <nav
-          className="hidden items-center gap-7 text-sm font-medium text-slate-600 lg:flex"
+          className="hidden items-center gap-5 text-sm font-medium text-slate-600 lg:flex xl:gap-7"
           aria-label="Navigation principale"
         >
-          {navLinks.map((link) => (
+          {headerNavLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="relative transition hover:text-brand-600 after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative whitespace-nowrap transition hover:text-brand-600 after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden shrink-0 lg:block">
           <a
             href={author.whatsappHref}
             target="_blank"
