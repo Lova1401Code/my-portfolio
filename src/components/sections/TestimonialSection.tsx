@@ -4,7 +4,7 @@ import { testimonial } from '../../site-content'
 export function TestimonialSection() {
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-16 md:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-14 md:py-24"
     >
       <div
         className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-purple-100/40 blur-3xl"
@@ -20,7 +20,7 @@ export function TestimonialSection() {
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Témoignage
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Ce qu'on dit de mon travail
           </h2>
           <div
@@ -29,16 +29,16 @@ export function TestimonialSection() {
           />
         </div>
 
-        <figure className="mx-auto mt-12 max-w-3xl rounded-3xl border border-white/60 bg-white/80 p-8 text-center shadow-xl backdrop-blur-md md:p-12">
+        <figure className="mx-auto mt-8 max-w-3xl rounded-3xl border border-white/60 bg-white/80 p-6 text-center shadow-xl backdrop-blur-md sm:mt-12 sm:p-8 md:p-12">
           <svg
-            className="mx-auto h-12 w-12 text-brand-400"
+            className="mx-auto h-10 w-10 text-brand-400 sm:h-12 sm:w-12"
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden
           >
             <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
           </svg>
-          <blockquote className="mt-6 text-lg leading-relaxed text-slate-700 md:text-xl">
+          <blockquote className="mt-6 text-base leading-relaxed text-slate-700 sm:text-lg md:text-xl">
             {testimonial.quote}
           </blockquote>
           <figcaption className="mt-8 flex flex-col items-center gap-2">

@@ -26,7 +26,7 @@ export function WorkProcessSection() {
   return (
     <section
       id="processus"
-      className="relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-white to-white py-16 md:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-white to-white py-14 md:py-24"
     >
       <div
         className="pointer-events-none absolute -right-32 top-1/4 h-80 w-80 rounded-full bg-brand-100/40 blur-3xl"
@@ -42,7 +42,7 @@ export function WorkProcessSection() {
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Méthodologie
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Processus de travail
           </h2>
           <div
@@ -55,23 +55,23 @@ export function WorkProcessSection() {
           </p>
         </div>
 
-        <ol className="relative mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="relative mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           <div
             className="pointer-events-none absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-brand-300/60 to-transparent lg:block"
             aria-hidden
           />
           {workSteps.map((item, i) => (
             <li key={item.title} className="group relative flex">
-              <div className="flex h-full w-full flex-col rounded-2xl border border-white/60 bg-white/70 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-lg">
+              <div className="flex h-full w-full flex-col rounded-2xl border border-white/60 bg-white/70 p-4 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-lg sm:p-6">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
                     <StepIcon index={i} />
                   </span>
-                  <span className="text-4xl font-extrabold leading-none text-slate-100 transition-colors duration-300 group-hover:text-brand-100">
+                  <span className="text-3xl font-extrabold leading-none text-slate-100 transition-colors duration-300 group-hover:text-brand-100 sm:text-4xl">
                     {item.step}
                   </span>
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-4 text-base font-bold text-slate-900 sm:mt-5 sm:text-lg">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">

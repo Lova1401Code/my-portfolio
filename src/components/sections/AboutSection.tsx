@@ -18,12 +18,12 @@ function DownloadIcon() {
 
 export function AboutSection() {
   return (
-    <section id="apropos" className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-16 md:py-24">
+    <section id="apropos" className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-14 md:py-24">
       <Container>
-        <div className="rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-100 md:p-10 lg:p-12">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="rounded-3xl bg-white p-4 shadow-md ring-1 ring-slate-100 sm:p-6 md:p-10 lg:p-12">
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
             <div className="flex flex-col items-center lg:items-start">
-              <div className="relative w-full max-w-sm">
+              <div className="relative w-full max-w-[16rem] sm:max-w-sm">
                 <div
                   className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-brand-200/50 via-purple-200/40 to-sky-200/40 blur-3xl"
                   aria-hidden
@@ -36,7 +36,7 @@ export function AboutSection() {
                   height={576}
                   loading="lazy"
                 />
-                <div className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-slate-700 shadow-lg ring-1 ring-slate-100 backdrop-blur">
+                <div className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-white/95 px-4 py-2 text-xs font-medium text-slate-700 shadow-lg ring-1 ring-slate-100 backdrop-blur sm:text-sm">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
@@ -59,17 +59,17 @@ export function AboutSection() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
                 {about.title}
               </h2>
-              <div className="mt-6 space-y-4 text-slate-600">
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {about.paragraphs.map((p, i) => (
-                  <p key={i} className="leading-relaxed">
+                  <p key={i}>
                     {p}
                   </p>
                 ))}
               </div>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
                 <Button
                   onClick={() =>
                     document

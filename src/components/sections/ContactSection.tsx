@@ -44,7 +44,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-b from-sky-50/40 via-white to-white py-16 md:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-sky-50/40 via-white to-white py-14 md:py-24"
     >
       <div
         className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-sky-100/40 blur-3xl"
@@ -56,11 +56,11 @@ export function ContactSection() {
       />
 
       <Container>
-        <div className="mx-auto mb-12 max-w-2xl text-center">
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Contact
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Parlons de votre projet
           </h2>
           <div
@@ -72,27 +72,27 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid gap-10 rounded-3xl border border-white/60 bg-white/80 p-6 shadow-xl backdrop-blur-md md:p-10 lg:grid-cols-2 lg:gap-14 lg:p-12">
+        <div className="grid gap-8 rounded-3xl border border-white/60 bg-white/80 p-4 shadow-xl backdrop-blur-md sm:p-6 md:grid-cols-2 md:gap-10 md:p-10 lg:gap-14 lg:p-12">
           <div>
-            <ul className="space-y-5 text-sm text-slate-700">
-              <li className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30">
+            <ul className="space-y-4 text-sm text-slate-700 sm:space-y-5">
+              <li className="flex items-center gap-3 sm:gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30 sm:h-12 sm:w-12">
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M4 6h16v12H4z M4 6l8 7 8-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="font-semibold text-slate-900">Email</p>
                   <a
                     href={`mailto:${contactInfo.email}`}
-                    className="text-brand-600 transition hover:text-brand-700"
+                    className="break-all text-brand-600 transition hover:text-brand-700"
                   >
                     {contactInfo.email}
                   </a>
                 </div>
               </li>
-              <li className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30">
+              <li className="flex items-center gap-3 sm:gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30 sm:h-12 sm:w-12">
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z M12 6a3 3 0 100 6 3 3 0 000-6z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -102,8 +102,8 @@ export function ContactSection() {
                   <p>{contactInfo.location}</p>
                 </div>
               </li>
-              <li className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30">
+              <li className="flex items-center gap-3 sm:gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30 sm:h-12 sm:w-12">
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L18 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -148,10 +148,10 @@ export function ContactSection() {
           <div>
             {status === 'sent' ? (
               <div
-                className="flex h-full min-h-[320px] flex-col items-center justify-center rounded-2xl border border-dashed border-brand-200 bg-brand-50/50 p-8 text-center"
+                className="flex h-full min-h-[280px] flex-col items-center justify-center rounded-2xl border border-dashed border-brand-200 bg-brand-50/50 p-6 text-center sm:min-h-[320px] sm:p-8"
                 role="status"
               >
-                <p className="text-lg font-semibold text-slate-900">
+                <p className="text-base font-semibold text-slate-900 sm:text-lg">
                   Merci, message bien reçu.
                 </p>
                 <p className="mt-2 text-sm text-slate-600">

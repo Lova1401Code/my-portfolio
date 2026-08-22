@@ -36,7 +36,7 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-white to-white py-16 md:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-white to-white py-14 md:py-24"
     >
       <div
         className="pointer-events-none absolute -right-32 top-1/4 h-80 w-80 rounded-full bg-purple-100/40 blur-3xl"
@@ -52,7 +52,7 @@ export function PortfolioSection() {
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Réalisations
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Portfolio
           </h2>
           <div
@@ -65,7 +65,7 @@ export function PortfolioSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {projects.map((project) => (
             <article
               key={`${project.titre_du_projet}-${project.date}`}
@@ -93,14 +93,14 @@ export function PortfolioSection() {
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col p-4 sm:p-6">
                 <time
                   className="text-xs font-semibold uppercase tracking-wider text-brand-600"
                   dateTime={project.date}
                 >
                   {formatDate(project.date)}
                 </time>
-                <h3 className="mt-2 text-lg font-bold leading-snug text-slate-900">
+                <h3 className="mt-2 text-base font-bold leading-snug text-slate-900 sm:text-lg">
                   {project.titre_du_projet}
                 </h3>
                 <p className="mt-2 line-clamp-3 flex-1 text-sm text-slate-600">
@@ -132,7 +132,7 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex justify-center sm:mt-12">
           <Button
             variant="primary"
             onClick={() =>

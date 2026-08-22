@@ -73,7 +73,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-slate-900/60 p-4 backdrop-blur-sm sm:p-6 md:items-center"
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-slate-900/60 p-3 backdrop-blur-sm sm:p-6 md:items-center"
       onClick={onClose}
     >
       <div
@@ -98,26 +98,26 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-lg transition hover:bg-white hover:text-slate-900"
+            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-lg transition hover:bg-white hover:text-slate-900 sm:right-4 sm:top-4 sm:h-10 sm:w-10"
             aria-label="Fermer"
           >
             <CloseIcon />
           </button>
-          <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
             <time
               className="text-xs font-semibold uppercase tracking-wider text-white/80"
               dateTime={project.date}
             >
               {formatDate(project.date)}
             </time>
-            <h3 id="modal-title" className="mt-1 text-2xl font-bold text-white">
+            <h3 id="modal-title" className="mt-1 text-xl font-bold text-white sm:text-2xl">
               {project.titre_du_projet}
             </h3>
           </div>
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto p-6 md:p-8">
-          <p className="text-slate-600 leading-relaxed">
+        <div className="max-h-[50vh] overflow-y-auto p-4 sm:p-6 md:p-8">
+          <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
             {project.description_projet}
           </p>
 
@@ -162,13 +162,13 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-slate-50 p-5 ring-1 ring-slate-100">
+            <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100 sm:p-5">
               <h4 className="text-sm font-bold text-slate-900">Approche technique</h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {project.approche_technique}
               </p>
             </div>
-            <div className="rounded-2xl bg-brand-50/60 p-5 ring-1 ring-brand-100">
+            <div className="rounded-2xl bg-brand-50/60 p-4 ring-1 ring-brand-100 sm:p-5">
               <h4 className="text-sm font-bold text-slate-900">Résultat</h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {project.resultat}

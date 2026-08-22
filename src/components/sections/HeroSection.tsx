@@ -45,27 +45,27 @@ export function HeroSection() {
   return (
     <section
       id="accueil"
-      className="relative overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white pb-20 pt-32 md:pb-28 md:pt-36"
+      className="relative overflow-hidden bg-gradient-to-b from-purple-50 via-white to-white pb-16 pt-28 sm:pb-20 sm:pt-32 md:pb-28 md:pt-36"
     >
       <div
-        className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-purple-200/40 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-purple-200/40 blur-3xl sm:h-96 sm:w-96"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-sky-200/40 blur-3xl"
+        className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-sky-200/40 blur-3xl sm:h-80 sm:w-80"
         aria-hidden
       />
 
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="text-center lg:text-left">
+            <h1 className="text-[1.75rem] font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
               {hero.title}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
               {hero.subtitle}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-start">
               <Button
                 onClick={() =>
                   document
@@ -88,7 +88,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
+          <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-md">
             <div
               className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-purple-300/50 via-pink-200/40 to-sky-300/50 blur-3xl"
               aria-hidden
@@ -109,18 +109,18 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 rounded-2xl bg-brand-50/80 p-6 shadow-inner ring-1 ring-brand-100 sm:grid-cols-3">
+        <div className="mt-12 grid gap-3 rounded-2xl bg-brand-50/80 p-4 shadow-inner ring-1 ring-brand-100 sm:grid-cols-3 sm:gap-4 sm:p-6 md:mt-14">
           {hero.stats.map((s) => (
             <div
               key={s.label}
               className="flex items-center gap-3 rounded-xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-slate-100"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-100">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-100 sm:h-11 sm:w-11">
                 <StatIcon type={s.icon} />
               </span>
-              <div>
-                <p className="text-xl font-bold text-slate-900">{s.value}</p>
-                <p className="text-sm text-slate-600">{s.label}</p>
+              <div className="min-w-0">
+                <p className="text-lg font-bold text-slate-900 sm:text-xl">{s.value}</p>
+                <p className="truncate text-xs text-slate-600 sm:text-sm">{s.label}</p>
               </div>
             </div>
           ))}

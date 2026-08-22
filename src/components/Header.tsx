@@ -21,9 +21,9 @@ export function Header() {
   }, [])
 
   return (
-    <header className="fixed top-3 left-0 right-0 z-50 px-4 sm:px-6">
+    <header className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
       <div
-        className={`mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-full border border-slate-200/60 px-4 py-2.5 backdrop-blur-xl transition-all duration-300 lg:px-6 ${
+        className={`mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-slate-200/60 px-3 py-2 backdrop-blur-xl transition-all duration-300 sm:px-4 sm:gap-4 lg:px-6 ${
           scrolled
             ? 'h-12 bg-white/95 shadow-md shadow-slate-300/30'
             : 'h-14 bg-white/80 shadow-lg shadow-slate-300/40'
@@ -31,7 +31,7 @@ export function Header() {
       >
         <a
           href="#accueil"
-          className="flex items-center gap-2.5 text-slate-900 lg:gap-3"
+          className="flex items-center gap-2.5 text-slate-900 sm:gap-3"
           onClick={() => setOpen(false)}
         >
           <span
@@ -40,11 +40,11 @@ export function Header() {
           >
             {author.logoInitial}
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-sm font-bold tracking-tight text-slate-900 lg:text-base">
+          <span className="flex min-w-0 flex-col leading-none">
+            <span className="truncate text-sm font-bold tracking-tight text-slate-900 lg:text-base">
               {author.brandTitle}
             </span>
-            <span className="mt-0.5 text-[11px] font-medium text-slate-500">
+            <span className="mt-0.5 hidden truncate text-[11px] font-medium text-slate-500 xs:block sm:text-[11px]">
               {author.tagline}
             </span>
           </span>
@@ -80,7 +80,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 lg:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-700 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -91,17 +91,17 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="mx-auto mt-2 max-w-5xl px-0 sm:px-0 lg:hidden">
+        <div className="mx-auto mt-2 max-w-5xl lg:hidden">
           <div
             id="mobile-nav"
             className="rounded-3xl border border-slate-200/60 bg-white/95 p-4 shadow-lg shadow-slate-300/30 backdrop-blur-xl"
           >
-            <nav className="flex flex-col gap-1 text-sm font-medium text-slate-700">
+            <nav className="flex flex-col gap-1 text-sm font-medium text-slate-700 sm:text-base">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="rounded-full px-4 py-2.5 transition hover:bg-brand-50 hover:text-brand-700"
+                  className="rounded-full px-4 py-3 transition hover:bg-brand-50 hover:text-brand-700"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}

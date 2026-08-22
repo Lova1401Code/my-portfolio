@@ -16,7 +16,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-16 md:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-14 md:py-24"
     >
       <div
         className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-brand-100/40 blur-3xl"
@@ -32,7 +32,7 @@ export function ServicesSection() {
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Expertise
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Que fais-je&nbsp;?
           </h2>
           <div
@@ -46,7 +46,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">
+        <div className="mt-8 grid gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-2 lg:items-start">
           <div className="flex flex-col gap-4">
             {services.map((service, index) => {
               const isActive = index === active
@@ -55,15 +55,15 @@ export function ServicesSection() {
                   key={service.title}
                   type="button"
                   onClick={() => setActive(index)}
-                  className={`group rounded-2xl border p-6 text-left transition-all duration-300 ${
+                  className={`group rounded-2xl border p-4 text-left transition-all duration-300 sm:p-6 ${
                     isActive
                       ? 'border-brand-200 bg-white shadow-lg ring-1 ring-brand-200'
                       : 'border-slate-100 bg-white/60 shadow-sm hover:border-brand-100 hover:bg-white/80'
                   }`}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <span
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-all duration-300 sm:h-12 sm:w-12 ${
                         isActive
                           ? 'bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30'
                           : 'bg-slate-100 text-slate-500 group-hover:bg-brand-100 group-hover:text-brand-600'
@@ -85,13 +85,11 @@ export function ServicesSection() {
                       </svg>
                     </span>
                     <span
-                      className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
-                        isActive ? 'bg-gradient-to-r from-brand-500 to-purple-500' : 'bg-slate-200'
-                      }`}
+                      className="h-1 flex-1 rounded-full transition-colors duration-300"
                       aria-hidden
                     />
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-slate-900">
+                  <h3 className="mt-4 text-base font-bold text-slate-900 sm:text-lg">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -103,11 +101,11 @@ export function ServicesSection() {
           </div>
 
           <div className="lg:sticky lg:top-28">
-            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 to-navy-800 p-8 text-white shadow-xl md:p-10">
+            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 to-navy-800 p-6 text-white shadow-xl sm:p-8 md:p-10">
               <p className="text-sm font-semibold uppercase tracking-wider text-brand-300">
                 {services[active]?.title}
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-200">
+              <p className="mt-4 text-base leading-relaxed text-slate-200 sm:text-lg">
                 {services[active]?.description}
               </p>
               <div

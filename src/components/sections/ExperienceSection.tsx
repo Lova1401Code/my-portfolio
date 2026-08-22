@@ -11,7 +11,7 @@ export function ExperienceSection() {
   return (
     <section
       id="experiences"
-      className="relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-white to-white py-16 md:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-white to-white py-14 md:py-24"
     >
       <div
         className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-brand-100/40 blur-3xl"
@@ -27,7 +27,7 @@ export function ExperienceSection() {
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
             Parcours
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Expériences professionnelles
           </h2>
           <div
@@ -40,7 +40,7 @@ export function ExperienceSection() {
           </p>
         </div>
 
-        <ol className="relative mx-auto mt-14 max-w-4xl">
+        <ol className="relative mx-auto mt-10 max-w-4xl sm:mt-14">
           <div
             className="pointer-events-none absolute left-4 top-2 h-full w-0.5 bg-gradient-to-b from-brand-500 via-purple-500 to-transparent md:left-1/2 md:-translate-x-1/2"
             aria-hidden
@@ -52,7 +52,7 @@ export function ExperienceSection() {
             return (
               <li
                 key={item.role + item.company}
-                className={`relative mb-10 flex md:mb-12 ${
+                className={`relative mb-8 flex md:mb-12 ${
                   isLeft
                     ? 'md:justify-start'
                     : 'md:justify-end'
@@ -64,11 +64,11 @@ export function ExperienceSection() {
                 />
 
                 <div
-                  className={`ml-12 w-full md:ml-0 md:w-[calc(50%-2rem)] ${
+                  className={`ml-8 w-full md:ml-0 md:w-[calc(50%-2rem)] ${
                     isLeft ? '' : 'md:text-right'
                   }`}
                 >
-                  <div className="group rounded-2xl border border-white/60 bg-white/70 p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-lg">
+                  <div className="group rounded-2xl border border-white/60 bg-white/70 p-4 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-lg sm:p-6">
                     <div
                       className={`flex flex-wrap items-center gap-2 ${
                         isLeft ? '' : 'md:justify-end'
@@ -83,7 +83,7 @@ export function ExperienceSection() {
                         {tc.label}
                       </span>
                     </div>
-                    <h3 className="mt-3 text-lg font-bold text-slate-900">
+                    <h3 className="mt-3 text-base font-bold text-slate-900 sm:text-lg">
                       {item.role}
                     </h3>
                     <p className="text-sm font-semibold text-brand-600">
