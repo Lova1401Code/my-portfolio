@@ -12,12 +12,32 @@ function WhatsAppIcon({ className = 'h-4 w-4' }: { className?: string }) {
 export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeId, setActiveId] = useState('accueil')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const ids = navLinks.map((l) => l.href.slice(1))
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' },
+    )
+
+    sections.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -54,15 +74,22 @@ export function Header() {
           className="hidden items-center gap-5 text-sm font-medium text-slate-600 lg:flex xl:gap-7"
           aria-label="Navigation principale"
         >
-          {headerNavLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative whitespace-nowrap transition hover:text-brand-600 after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {link.label}
-            </a>
-          ))}
+          {headerNavLinks.map((link) => {
+            const isActive = link.href === `#${activeId}`
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`relative whitespace-nowrap transition after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 ${
+                  isActive
+                    ? 'text-brand-600 after:w-full'
+                    : 'text-slate-600 hover:text-brand-600 after:w-0 hover:after:w-full'
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="hidden shrink-0 lg:block">
@@ -97,16 +124,23 @@ export function Header() {
             className="rounded-3xl border border-slate-200/60 bg-white/95 p-4 shadow-lg shadow-slate-300/30 backdrop-blur-xl"
           >
             <nav className="flex flex-col gap-1 text-sm font-medium text-slate-700 sm:text-base">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-full px-4 py-3 transition hover:bg-brand-50 hover:text-brand-700"
-                  onClick={() => setOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = link.href === `#${activeId}`
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className={`rounded-full px-4 py-3 transition ${
+                      isActive
+                        ? 'bg-brand-50 text-brand-700'
+                        : 'text-slate-700 hover:bg-brand-50 hover:text-brand-700'
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
+              })}
               <a
                 href={author.whatsappHref}
                 target="_blank"
