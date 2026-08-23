@@ -47,7 +47,7 @@
       "Monitoring et logs (planned feature)"
     ],
     "approche_technique": "Application web React connectée à une API NestJS avec PostgreSQL via Prisma. Déploiement conteneurisé Docker sur Linux. Architecture pensée pour un contexte industriel.",
-    "resultat": "Projet démontrant comment le développement logiciel, DevOps et la compréhension des infrastructures s'intègrent dans un environnement industriel.",
+    "resultat": "Projet démontrant comment le développement logiciel et les pratiques DevOps (conteneurisation Docker) s'intègrent dans un environnement industriel.",
     "lien_git": null,
     "lien_autre": null
   },
@@ -123,30 +123,6 @@
     "lien_autre": null
   },
   {
-    "titre_du_projet": "Network Infrastructure — Cisco Packet Tracer",
-    "description_projet": "Conception et configuration d'une infrastructure réseau avec Cisco Packet Tracer : adressage IP, subnetting, VLAN, routage et DHCP.",
-    "image": "https://picsum.photos/seed/cisco-network-vlan-routing/800/600",
-    "date": "2023-11-18",
-    "techno_utilisee": [
-      "Cisco Packet Tracer",
-      "TCP/IP",
-      "DHCP",
-      "VLAN",
-      "Routing"
-    ],
-    "fonctionnalite_principale": [
-      "Conception réseau et adressage IP avec subnetting",
-      "Configuration de VLAN et routage inter-réseaux",
-      "Configuration DHCP automatique",
-      "Configuration des équipements réseau",
-      "Tests de connectivité entre réseaux"
-    ],
-    "approche_technique": "Simulation d'infrastructure réseau avec Cisco Packet Tracer. Mise en œuvre de TCP/IP, VLAN, routage et DHCP avec communication entre plusieurs sous-réseaux.",
-    "resultat": "Démonstration des compétences systèmes & réseaux : capacité à concevoir et configurer une infrastructure réseau, au-delà du seul développement logiciel.",
-    "lien_git": null,
-    "lien_autre": null
-  },
-  {
     "titre_du_projet": "Personal Portfolio",
     "description_projet": "Site portfolio personnel développé en React avec Tailwind CSS. Design responsive et organisation du code soignée.",
     "image": "https://picsum.photos/seed/personal-portfolio-react/800/600",
@@ -162,7 +138,7 @@
       "Organisation du code en composants réutilisables"
     ],
     "approche_technique": "Application React avec Tailwind CSS. Architecture en composants, design responsive et attention portée à la performance.",
-    "resultat": "Projet personnel professionnel présentant mes réalisations et mon positionnement Full-Stack, DevOps et systèmes & réseaux.",
+    "resultat": "Projet personnel professionnel présentant mes réalisations et mon positionnement Full-Stack et DevOps.",
     "lien_git": null,
     "lien_autre": null
   }

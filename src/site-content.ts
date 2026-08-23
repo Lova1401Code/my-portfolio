@@ -4,7 +4,7 @@ export const author = {
   brandTitle: 'Lova Ramiharisoa',
   logoInitial: 'LR',
   displayName: 'Full-Stack Developer',
-  tagline: 'Full-Stack Developer | DevOps & Infrastructure',
+  tagline: 'Full-Stack Developer | DevOps',
   whatsappHref: 'https://wa.me/261334393443',
 } as const
 
@@ -30,15 +30,15 @@ export const headerNavLinks = [
 ] as const
 
 export const hero = {
-  title: 'Full-Stack Developer | DevOps & Infrastructure',
+  title: 'Full-Stack Developer | DevOps',
   subtitle:
-    "Je développe des applications web et mobiles avec React, Next.js et NestJS. Compétences complémentaires en DevOps (Docker, CI/CD, Nginx) et en systèmes & réseaux (Linux, TCP/IP, routage) pour déployer et faire fonctionner ce que je construis.",
+    "Je développe des applications web et mobiles avec React, Next.js et NestJS. Compétences complémentaires en DevOps (Docker, CI/CD, Nginx) pour déployer et faire fonctionner ce que je construis.",
   stats: [
     { value: '2+', label: "Années d'expérience", icon: 'briefcase' as const },
     { value: String(projects.length), label: 'Projets', icon: 'layers' as const },
     {
       value: '3',
-      label: 'Full-Stack · DevOps · Réseaux',
+      label: 'Full-Stack · DevOps',
       icon: 'users' as const,
     },
   ],
@@ -47,9 +47,8 @@ export const hero = {
 export const about = {
   title: 'À propos de moi',
   paragraphs: [
-    "Développeur Full-Stack orienté développement logiciel, je conçois des applications métier, des architectures frontend/backend et des bases de données avec React, Next.js, NestJS, PostgreSQL et Prisma. Je m'intéresse également à Linux, Docker, la CI/CD et l'infrastructure de déploiement.",
-    "J'ai des connaissances pratiques en systèmes et réseaux : TCP/IP, DNS, DHCP, VLAN, routage et adressage IP. Cette compréhension des infrastructures me permet de raisonner au-delà du code, jusqu'à l'environnement qui fait fonctionner une application.",
-    "Profil polyvalent mais cohérent : je développe des applications, je sais les déployer, je comprends l'infrastructure qui les supporte. Je m'intéresse particulièrement à la digitalisation des entreprises et aux environnements industriels, où ces compétences combinées prennent tout leur sens.",
+    "Développeur Full-Stack orienté développement logiciel, je conçois des applications métier, des architectures frontend/backend et des bases de données avec React, Next.js, NestJS, PostgreSQL et Prisma. Je m'intéresse également à Docker, la CI/CD et le déploiement.",
+    "Profil polyvalent mais cohérent : je développe des applications et je sais les déployer avec Docker, GitHub Actions et Nginx. Je m'intéresse particulièrement à la digitalisation des entreprises et aux environnements industriels, où ces compétences combinées prennent tout leur sens.",
   ],
 }
 
@@ -114,13 +113,6 @@ export const education = [
     school: 'EPSA Antsirabe',
     description:
       "Formation axée sur le développement full stack, les architectures web, les bases de données et les bonnes pratiques de versionnement.",
-  },
-  {
-    year: '2022 — 2023',
-    title: 'Formation systèmes & réseaux',
-    school: 'Formation pratique',
-    description:
-      "Fondamentaux réseaux : TCP/IP, DNS, DHCP, VLAN, routage, adressage IP et configuration d'équipements avec Cisco Packet Tracer.",
   },
   {
     year: '2024',
@@ -200,11 +192,6 @@ export const services = [
     description:
       "Conteneurisation Docker, pipelines CI/CD avec GitHub Actions, déploiement Nginx, monitoring et logs. Capacité à déployer et maintenir ce que je développe.",
   },
-  {
-    title: 'Systèmes & réseaux',
-    description:
-      "Linux, TCP/IP, DNS, DHCP, VLAN, routage et adressage IP. Compréhension des infrastructures réseau et des environnements IT et industriels.",
-  },
 ] as const
 
 export const collaborationHighlight = {
@@ -214,7 +201,7 @@ export const collaborationHighlight = {
 
 export const testimonial = {
   quote:
-    "Un profil qui couvre toute la chaîne : développement frontend/backend propre, déploiement Docker et compréhension de l'infrastructure réseau. Une capacité rare à raisonner du code jusqu'à la production.",
+    "Un profil qui couvre toute la chaîne : développement frontend/backend propre, déploiement Docker et CI/CD. Une capacité rare à raisonner du code jusqu'à la production.",
   author: 'Collaborateur projet',
   role: 'Équipe streaming',
 }
