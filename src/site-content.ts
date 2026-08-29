@@ -32,7 +32,7 @@ export const headerNavLinks = [
 export const hero = {
   title: 'Full-Stack Developer | DevOps',
   subtitle:
-    "Je développe des applications web et mobiles avec React, Next.js et NestJS. Compétences complémentaires en DevOps (Docker, CI/CD, Nginx) pour déployer et faire fonctionner ce que je construis.",
+    "Je développe des applications web performantes avec React, Next.js, NestJS et PostgreSQL (Prisma). Curieux et rigoureux, J'intègre également Docker, CI/CD et Nginx pour automatiser et faciliter le déploiement des applications.",
   stats: [
     { value: '2+', label: "Années d'expérience", icon: 'briefcase' as const },
     { value: String(projects.length), label: 'Projets', icon: 'layers' as const },
@@ -47,8 +47,11 @@ export const hero = {
 export const about = {
   title: 'À propos de moi',
   paragraphs: [
-    "Développeur Full-Stack orienté développement logiciel, je conçois des applications métier, des architectures frontend/backend et des bases de données avec React, Next.js, NestJS, PostgreSQL et Prisma. Je m'intéresse également à Docker, la CI/CD et le déploiement.",
-    "Profil polyvalent mais cohérent : je développe des applications et je sais les déployer avec Docker, GitHub Actions et Nginx. Je m'intéresse particulièrement à la digitalisation des entreprises et aux environnements industriels, où ces compétences combinées prennent tout leur sens.",
+    "Développeur Full-Stack spécialisé en JavaScript et TypeScript, je conçois des applications web complètes, de l'interface utilisateur jusqu'au backend, aux API et à la base de données.",
+    "Je travaille principalement avec React, Next.js, NestJS, PostgreSQL et Prisma.",
+    "Je m'intéresse également aux pratiques DevOps afin de mieux maîtriser le cycle de vie complet d'une application : conteneurisation avec Docker, automatisation avec CI/CD et déploiement sur serveur avec Nginx.",
+    "J'apprécie particulièrement les projets nécessitant la conception d'applications métier, de dashboards, d'API et d'architectures frontend/backend.",
+    "Disponible pour des missions freelance, des collaborations à distance et des opportunités en CDI ou CDD.",
   ],
 }
 
@@ -82,45 +85,60 @@ export const workSteps = [
 export const experiences = [
   {
     period: '2024 — Présent',
-    role: 'Développeur Full-Stack',
-    company: 'Plateforme streaming (équipe)',
+    role: 'Développeur Full-Stack — Projet collaboratif',
+    company: 'Plateforme de streaming vidéo',
     description:
-      "Développement d'une plateforme de streaming avec React, React Native, NestJS, PostgreSQL et Prisma. Architecture frontend/backend, authentification JWT, streaming vidéo HLS et déploiement Docker.",
+      "Participation au développement d'une plateforme de streaming vidéo au sein d'une équipe de développement. Développement d'interfaces avec React, Développement du backend avec NestJS, Conception et gestion de la base de données PostgreSQL avec Prisma, Travail sur des API et fonctionnalités métier, Utilisation de Git pour le travail collaboratif, Conteneurisation et environnement Docker, Integration payment et authentification JWT, création des script pour automaitiser des taches, scrapper une siteweb pour récupérer des données, Optimisation des requetes , des recherches.",
     type: 'job' as const,
   },
   {
-    period: '2023 — 2024',
-    role: 'Développeur Full-Stack freelance',
-    company: 'Projets indépendants',
+    period: 'Aout 2024 - Novembre 2024',
+    role: 'Stagiaire Développeur Full-Stack',
+    company: 'Projet de développement web — Collaboration en équipe',
     description:
-      "Création d'applications métier et de sites web pour clients. Développement frontend/backend, mise en place de CI/CD avec GitHub Actions et déploiement sous Docker/Nginx.",
+      "Stage réalisé en collaboration avec un développeur, avec lequel la coopération se poursuit actuellement à travers différents projets. Durant ce stage, j'ai appris et mis en pratique les fondamentaux du développement Full-Stack, notamment la création d'applications CRUD, la mise en place de systèmes d'authentification et le développement d'API avec NestJS connectées à une base de données PostgreSQL via Prisma. J'ai également participé au développement du jeu Fanorona Malagasy avec Next.js et React, en travaillant notamment sur : La conception et le développement de fonctionnalités du jeu, La communication en temps réel avec WebSocket, L'amélioration et le renforcement de la logique et des algorithmes du jeu, Le travail collaboratif avec Git",
     type: 'freelance' as const,
   },
   {
-    period: '2023',
-    role: 'Stagiaire développeur',
-    company: 'Studio numérique',
+    period: 'Mars 2024',
+    role: 'Participant Hackathon — Développeur Frontend',
+    company: 'Hackathon universitaire et inter-universitaire',
     description:
-      "Participation au développement d'une application web en équipe. Travail sur le front (React) et le back (NestJS, API REST), et initiation aux pratiques DevOps.",
+      "Take a Look — Projet de surveillance domestique. Développement de la partie web avec Vue.js au sein d'une équipe de 5 étudiants. Le projet proposait une solution de surveillance domestique avec visualisation et technologies temps réel. Technologies du projet : Vue.js, Three.js, Django, Flutter, Node.js.",
+    type: 'intern' as const,
+  },
+  {
+    period: 'Juin 2022 — Septembre 2022',
+    role: 'Stagiaire Développeur d\'applications',
+    company: 'Direction Régionale de la Sécurité Publique (DRSP) — Vakinankaratra',
+    description:
+      "Développement d'une application pour digitaliser la gestion des candidats et du personnel, auparavant principalement réalisée sur support papier. Mise en place de la gestion des inscriptions, affectations, congés et import/export Excel. Technologies : Java Swing, MySQL, Apache POI.",
     type: 'intern' as const,
   },
 ] as const
 
 export const education = [
   {
-    year: '2023 — 2024',
-    title: 'Master en génie logiciel',
-    school: 'EPSA Antsirabe',
+    year: 'Novembre 2022 - Août 2024',
+    title: 'Master 2 en Génie Logiciel',
+    school: 'École Supérieure Polytechnique d\'Antsirabe (ESPA)',
     description:
-      "Formation axée sur le développement full stack, les architectures web, les bases de données et les bonnes pratiques de versionnement.",
+      "Architecture logicielle, conception d'API modernes et automatisation des processus. Conception d'applications performantes, Mise en place d'architectures sécurisées, systèmes d'authentification et gestion de bases de données.",
   },
   {
-    year: '2024',
-    title: 'Certification DevOps & Docker',
-    school: 'Formation en ligne',
+    year: 'Novembre 2019 - Août 2022',
+    title: 'Licence Professionnelle en Génie Logiciel',
+    school: 'École Supérieure Polytechnique d\'Antsirabe (ESPA)',
     description:
-      "Conteneurisation Docker, pipelines CI/CD avec GitHub Actions, déploiement, Nginx et monitoring.",
+      "Fondations du développement web, modélisation de bases de données, algorithmique et méthodes de travail collaboratif.",
   },
+  {
+    year: '2017 - 2018',
+    title: 'Certificat en Anglais & Informatique',
+    school: 'Universe English School of Antsirabe (UESA)',
+    description:
+      "Maîtrise des langues française et anglaise, et des outils informatiques de base. Un atout précieux aujourd'hui pour la veille technologique et la compréhension des documentations techniques internationales.",
+  }
 ] as const
 
 /** Logos via CDN publics (Devicon / Simple Icons). */
@@ -136,12 +154,6 @@ export const techStack = [
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
     dark: true,
-  },
-  {
-    name: 'React Native',
-    logoUrl:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-    dark: false,
   },
   {
     name: 'NestJS',
@@ -168,9 +180,14 @@ export const techStack = [
     dark: false,
   },
   {
-    name: 'Tailwind CSS',
+    name: 'Tailwind',
     logoUrl:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+    dark: false,
+  },
+  {
+    name: 'Docker',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
     dark: false,
   },
   {

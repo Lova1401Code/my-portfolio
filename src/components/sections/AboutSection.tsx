@@ -62,7 +62,7 @@ export function AboutSection() {
               <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
                 {about.title}
               </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+              <div className="mt-6 space-y-4 text-justify text-sm leading-relaxed text-slate-600 sm:text-base">
                 {about.paragraphs.map((p, i) => (
                   <p key={i}>
                     {p}
