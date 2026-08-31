@@ -33,12 +33,31 @@ function Field({
   )
 }
 
-export function ContactSection() {
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle')
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeaqebza'
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+export function ContactSection() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'error'>('idle')
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('sent')
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    setStatus('loading')
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      })
+      if (res.ok) {
+        setStatus('sent')
+        form.reset()
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -151,12 +170,16 @@ export function ContactSection() {
                 className="flex h-full min-h-[280px] flex-col items-center justify-center rounded-2xl border border-dashed border-brand-200 bg-brand-50/50 p-6 text-center sm:min-h-[320px] sm:p-8"
                 role="status"
               >
-                <p className="text-base font-semibold text-slate-900 sm:text-lg">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-purple-600 text-white shadow-md shadow-brand-600/30">
+                  <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12l4 4L19 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <p className="mt-4 text-base font-semibold text-slate-900 sm:text-lg">
                   Merci, message bien reçu.
                 </p>
                 <p className="mt-2 text-sm text-slate-600">
-                  Branchez ce formulaire à votre backend ou à un service comme
-                  Formspree lorsque vous serez prêt.
+                  Je vous réponds dès que possible.
                 </p>
                 <Button
                   variant="outline"
@@ -165,6 +188,31 @@ export function ContactSection() {
                   onClick={() => setStatus('idle')}
                 >
                   Envoyer un autre message
+                </Button>
+              </div>
+            ) : status === 'error' ? (
+              <div
+                className="flex h-full min-h-[280px] flex-col items-center justify-center rounded-2xl border border-dashed border-red-200 bg-red-50/50 p-6 text-center sm:min-h-[320px] sm:p-8"
+                role="alert"
+              >
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-red-100 text-red-600">
+                  <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <p className="mt-4 text-base font-semibold text-slate-900 sm:text-lg">
+                  Échec de l'envoi.
+                </p>
+                <p className="mt-2 text-sm text-slate-600">
+                  Une erreur est survenue. Veuillez réessayer ou m'écrire directement par email.
+                </p>
+                <Button
+                  variant="outline"
+                  className="mt-6"
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                >
+                  Réessayer
                 </Button>
               </div>
             ) : (
@@ -194,8 +242,8 @@ export function ContactSection() {
                     className="resize-y rounded-xl border border-slate-200 bg-white/80 px-4 py-2.5 text-sm text-slate-900 shadow-sm outline-none ring-brand-500/0 transition focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/15"
                   />
                 </div>
-                <Button type="submit" className="w-full sm:w-auto">
-                  Envoyer →
+                <Button type="submit" disabled={status === 'loading'} className="w-full sm:w-auto">
+                  {status === 'loading' ? 'Envoi…' : 'Envoyer →'}
                 </Button>
               </form>
             )}
