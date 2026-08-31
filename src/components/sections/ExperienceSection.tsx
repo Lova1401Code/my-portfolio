@@ -6,7 +6,7 @@ const typeConfig: Record<
   { label: string; classes: string; icon: string }
 > = {
   job: {
-    label: 'CDI',
+    label: 'Collaboration',
     classes: 'bg-brand-100 text-brand-700 ring-brand-200',
     icon: 'M9 17V9m6 8V5m-9 12h12',
   },

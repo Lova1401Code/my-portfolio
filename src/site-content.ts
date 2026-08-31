@@ -97,7 +97,7 @@ export const experiences = [
     company: 'Projet de développement web — Collaboration en équipe',
     description:
       "Stage réalisé en collaboration avec un développeur, avec lequel la coopération se poursuit actuellement à travers différents projets. Durant ce stage, j'ai appris et mis en pratique les fondamentaux du développement Full-Stack, notamment la création d'applications CRUD, la mise en place de systèmes d'authentification et le développement d'API avec NestJS connectées à une base de données PostgreSQL via Prisma. J'ai également participé au développement du jeu Fanorona Malagasy avec Next.js et React, en travaillant notamment sur : La conception et le développement de fonctionnalités du jeu, La communication en temps réel avec WebSocket, L'amélioration et le renforcement de la logique et des algorithmes du jeu, Le travail collaboratif avec Git",
-    type: 'freelance' as const,
+    type: 'intern' as const,
   },
   {
     period: 'Mars 2024',
