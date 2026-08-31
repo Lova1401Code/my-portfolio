@@ -66,7 +66,7 @@ export const workSteps = [
     step: '2',
     title: 'Architecture',
     description:
-      "Choix des stacks (front, API, mobile), structure des modules, authentification JWT et stratégie de déploiement.",
+      "Choix des stacks (front, API), structure des modules, authentification JWT et stratégie de déploiement.",
   },
   {
     step: '3',
@@ -200,7 +200,7 @@ export const techStack = [
 
 export const services = [
   {
-    title: 'Applications web & mobiles (React / Next.js / NestJS)',
+    title: 'Applications web (React / Next.js / NestJS)',
     description:
       "Frontend, backend, APIs REST, authentification JWT et composants réutilisables. Applications métier avec architecture frontend/backend et base de données PostgreSQL via Prisma.",
   },
@@ -213,7 +213,7 @@ export const services = [
 
 export const collaborationHighlight = {
   title: 'Projet phare',
-  body: "Plateforme de streaming — application Full-Stack complexe : React, React Native, NestJS, PostgreSQL, Prisma, streaming vidéo HLS, continue watching et authentification JWT.",
+  body: "Plateforme de streaming — application Full-Stack complexe : React, NestJS, PostgreSQL, Prisma, streaming vidéo HLS, continue watching et authentification JWT.",
 }
 
 export const testimonial = {

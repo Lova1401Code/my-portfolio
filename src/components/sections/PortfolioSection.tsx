@@ -60,7 +60,7 @@ export function PortfolioSection() {
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Une sélection de projets web, mobiles et full stack que j'ai conçus
+            Une sélection de projets web et full stack que j'ai conçus
             et développés. Cliquez sur un projet pour voir les détails.
           </p>
         </div>

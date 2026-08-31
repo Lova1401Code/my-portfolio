@@ -24,7 +24,7 @@ export function ClientsSection() {
             {collaborationHighlight.body}
           </p>
           <p className="mt-6 flex flex-wrap justify-center gap-x-2 gap-y-1.5 text-xs font-semibold text-brand-700 sm:text-sm">
-            {['React', 'Next.js', 'NestJS', 'React Native', 'PostgreSQL', 'Prisma', 'Stripe', 'Git'].map(
+            {['React', 'Next.js', 'NestJS', 'PostgreSQL', 'Prisma', 'Stripe', 'Git'].map(
               (tech) => (
                 <span key={tech} className="rounded-full bg-brand-50 px-3 py-1 ring-1 ring-brand-100">
                   {tech}

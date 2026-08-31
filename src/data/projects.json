@@ -1,12 +1,11 @@
 [
   {
     "titre_du_projet": "Streaming Platform",
-    "description_projet": "Plateforme de streaming vidéo Full-Stack avec application web et mobile, authentification, gestion des utilisateurs et suivi de progression.",
+    "description_projet": "Plateforme de streaming vidéo Full-Stack avec application web, authentification, gestion des utilisateurs et suivi de progression.",
     "image": "https://picsum.photos/seed/streaming-platform-hls/800/600",
     "date": "2024-06-15",
     "techno_utilisee": [
       "React",
-      "React Native",
       "NestJS",
       "PostgreSQL",
       "Prisma",
@@ -20,7 +19,7 @@
       "Téléchargement de contenu pour hors-ligne",
       "Architecture frontend/backend séparée"
     ],
-    "approche_technique": "Architecture frontend/backend : React et React Native côté client, NestJS et PostgreSQL côté serveur via Prisma. APIs REST pour la communication, authentification JWT et streaming vidéo HLS.",
+    "approche_technique": "Architecture frontend/backend : React côté client, NestJS et PostgreSQL côté serveur via Prisma. APIs REST pour la communication, authentification JWT et streaming vidéo HLS.",
     "resultat": "Projet Full-Stack complexe démontrant la capacité à concevoir une application multi-composants avec authentification, streaming vidéo et suivi d'état utilisateur.",
     "lien_git": null,
     "lien_autre": null
