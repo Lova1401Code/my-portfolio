@@ -1,144 +1,228 @@
 [
   {
-    "titre_du_projet": "Streaming Platform",
-    "description_projet": "Plateforme de streaming vidéo Full-Stack avec application web, authentification, gestion des utilisateurs et suivi de progression.",
-    "image": "https://picsum.photos/seed/streaming-platform-hls/800/600",
-    "date": "2024-06-15",
+    "titre_du_projet": "TaskFlow — Gestion de projets et tâches",
+    "description_projet": "Application SaaS de gestion de projets et de tâches avec authentification, suivi du cycle de vie des tâches et tableau de bord de progression.",
+    "probleme": "Les équipes et les indépendants dispersent leurs tâches entre tableurs, notes et messageries, ce qui fait perdre la visibilité sur les priorités et l'avancement. Sans outil centralisé, le suivi devient chaotique et les échéances sont facilement oubliées.",
+    "solution": "TaskFlow centralise la création de projets, l'organisation de tâches et le suivi de leur statut (à faire, en cours, terminé) dans une interface unique. Chaque tâche dispose d'une priorité, d'une date d'échéance et d'un système de filtrage, le tout protégé par une authentification JWT persistante.",
+    "image": "/projects/taskflow.png",
+    "date": "2024-08-05",
     "techno_utilisee": [
-      "React",
-      "NestJS",
-      "PostgreSQL",
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Express 5",
       "Prisma",
-      "REST API",
-      "JWT"
+      "PostgreSQL",
+      "JWT",
+      "React Router v6",
+      "Zustand",
+      "React Hook Form + Zod",
+      "Tailwind CSS",
+      "Axios"
     ],
     "fonctionnalite_principale": [
-      "Authentification et gestion des utilisateurs (JWT)",
-      "Streaming vidéo HLS avec gestion du lecteur",
-      "Suivi de progression et continue watching",
-      "Téléchargement de contenu pour hors-ligne",
-      "Architecture frontend/backend séparée"
+      "Authentification JWT (connexion/inscription, routes protégées, session persistante)",
+      "Création, modification et suppression de projets (CRUD) avec code couleur",
+      "Cycle de vie des tâches : à faire / en cours / terminé, priorités et dates d'échéance",
+      "Filtrage et catégorisation des tâches",
+      "Tableau de bord responsive avec barre latérale, skeletons et états vides",
+      "Backend Express 5 : API REST avec Prisma + PostgreSQL, authentification JWT et validation Zod"
     ],
-    "approche_technique": "Architecture frontend/backend : React côté client, NestJS et PostgreSQL côté serveur via Prisma. APIs REST pour la communication, authentification JWT et streaming vidéo HLS.",
-    "resultat": "Projet Full-Stack complexe démontrant la capacité à concevoir une application multi-composants avec authentification, streaming vidéo et suivi d'état utilisateur.",
+    "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React 18 + TypeScript avec Vite, gestion d'état Zustand, validation React Hook Form + Zod, communication API via Axios. Backend Express 5 avec Prisma comme ORM pour PostgreSQL, authentification JWT et validation des données par Zod. Configuration de déploiement SPA pour Vercel/Netlify.",
+    "resultat": "Projet Full-Stack démontrant la maîtrise des fondamentaux : authentification, CRUD, gestion d'état et expérience utilisateur soignée avec accessibilité et design responsive.",
     "lien_git": null,
-    "lien_autre": null
+    "lien_autre": "https://taskflow-frontend-sigma-ten.vercel.app/login"
   },
   {
-    "titre_du_projet": "Industrial Management — Suivi d'équipements",
-    "description_projet": "Application de gestion et de monitoring industriel : suivi des machines, maintenance, incidents et production. Conçue pour les entreprises industrielles.",
-    "image": "https://picsum.photos/seed/industrial-monitoring-machines/800/600",
+    "titre_du_projet": "Opportunity-Match — Plateforme de matching d'opportunités",
+    "description_projet": "Plateforme de mise en relation entre candidats et opportunités (emploi, financement, partenariat) avec moteur de correspondance et suivi des candidatures.",
+    "probleme": "La découverte manuelle d'opportunités pertinentes est lente et non personnalisée : les candidats parcourent des dizaines de sources sans filtrage adapté à leur profil, et les organisations reçoivent des candidatures peu qualifiées.",
+    "solution": "Opportunity-Match propose un parcours structuré : l'utilisateur crée son profil, consulte les opportunités disponibles et soumet des candidatures. Un moteur de matching évalue la correspondance entre chaque candidature et les opportunités pour proposer les meilleures associations.",
+    "image": "/projects/opportunity-match.png",
+    "date": "2025-03-01",
+    "techno_utilisee": [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "NestJS 11",
+      "Prisma",
+      "JWT",
+      "React Router v7",
+      "TanStack React Query",
+      "React Hook Form + Zod",
+      "Tailwind CSS",
+      "Vitest + Testing Library"
+    ],
+    "fonctionnalite_principale": [
+      "Authentification et gestion de profil utilisateur",
+      "Tableau de bord personnalisé",
+      "Parcours et gestion des opportunités",
+      "Soumission et suivi des candidatures",
+      "Moteur de matching entre candidatures et opportunités",
+      "Architecture Clean / Hexagonale (adapters, application, core, infrastructure, presentation)",
+      "Backend NestJS 11 : API REST avec authentification JWT, validation class-validator et Prisma"
+    ],
+    "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React 19 + TypeScript avec architecture hexagonale en couches séparées (core, application, infrastructure, presentation, adapters), données asynchrones via TanStack React Query, validation Zod, tests Vitest. Backend NestJS 11 avec authentification JWT, validation class-validator et Prisma pour la persistance. Architecture hexagonale appliquée des deux côtés.",
+    "resultat": "Projet mettant en pratique une architecture logicielle mature (Clean/Hexagonal) tout en résolvant un problème réel de mise en relation avec un algorithme de matching.",
+    "lien_git": null,
+    "lien_autre": "https://opportunity-match.vercel.app/login"
+  },
+  {
+    "titre_du_projet": "CRM — Gestion clients, leads et deals",
+    "description_projet": "Application CRM couvrant l'ensemble du pipeline commercial : leads, deals, clients, tâches et tableau de bord analytique.",
+    "probleme": "Les équipes commerciales qui gèrent leurs prospects et clients sur tableurs perdent des opportunités de conversion : pas de suivi des relances, pas de vision sur l'état du pipeline, et les informations clients sont éparpillées.",
+    "solution": "Le CRM centralise toute la relation client dans un tableau de bord unique. Du premier contact (lead) à la signature (deal), chaque étape est tracée. Les tâches de relance sont assignées et suivies, et des graphiques Recharts visualisent les performances commerciales.",
+    "image": "/projects/crm.png",
+    "date": "2024-10-10",
+    "techno_utilisee": [
+      "React 19",
+      "Vite",
+      "NestJS 11",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "React Router v7",
+      "Recharts",
+      "Zod",
+      "Axios",
+      "Lucide React",
+      "Tailwind CSS v4"
+    ],
+    "fonctionnalite_principale": [
+      "Tableau de bord avec visualisations Recharts (KPIs commerciaux)",
+      "Gestion complète des leads : liste, détail, formulaire",
+      "Suivi des deals et opportunités",
+      "Gestion des clients (CRUD complet)",
+      "Gestion des tâches et des relances",
+      "Administration des utilisateurs et rôles",
+      "Backend NestJS 11 : API REST avec authentification JWT, validation class-validator et Prisma pour PostgreSQL"
+    ],
+    "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React 19 avec architecture Clean / Hexagonale (adapters, application, core, infrastructure, presentation), visualisations Recharts, validation Zod, API consommée via Axios. Backend NestJS 11 avec authentification JWT, validation class-validator et Prisma comme ORM pour PostgreSQL. Tests avec Vitest côté frontend et Jest côté backend.",
+    "resultat": "Application métier complète démontrant la capacité à concevoir un outil répondant aux besoins réels d'une équipe commerciale, avec une architecture maintenable et évolutive.",
+    "lien_git": null,
+    "lien_autre": "https://my-2o17v01f0-lova1401codes-projects.vercel.app/login"
+  },
+  {
+    "titre_du_projet": "WeatherNow — Application météo en temps réel",
+    "description_projet": "Application web météo affichant les conditions en temps réel, les prévisions horaires et sur 3 jours, avec géolocalisation et mode sombre.",
+    "probleme": "Consulter la météo nécessite souvent de naviguer sur des sites lourds avec publicités. Les utilisateurs veulent une information rapide, précise et accessible sur n'importe quel appareil, avec la possibilité de rechercher par ville ou d'utiliser leur position actuelle.",
+    "solution": "WeatherNow offre une interface épurée et responsive qui affiche instantanément la météo d'une ville ou de la position géolocalisée de l'utilisateur. Les prévisions horaires et sur 3 jours, les détails (vent, humidité, ressenti) et l'historique des recherches sont accessibles en quelques clics, avec un mode clair/sombre.",
+    "image": "/projects/weathernow.png",
+    "date": "2024-12-15",
+    "techno_utilisee": [
+      "React 18",
+      "Vite 6",
+      "Tailwind CSS 3",
+      "Axios",
+      "Lucide React",
+      "WeatherAPI"
+    ],
+    "fonctionnalite_principale": [
+      "Recherche par ville (bouton ou touche Entrée)",
+      "Géolocalisation (« Use my location »)",
+      "Prévisions horaires du jour et aperçu sur 3 jours",
+      "Historique des recherches (localStorage)",
+      "Mode clair / sombre",
+      "Interface responsive (mobile, tablette, desktop)"
+    ],
+    "approche_technique": "Application frontend React 18 + Vite consommant l'API tierce WeatherAPI (pas de backend propriétaire). Appels API via Axios. Mise en cache en mémoire des réponses identiques pendant 60 secondes et annulation des requêtes obsolètes via AbortController. Thème clair/sombre géré par Tailwind (darkMode: 'class').",
+    "resultat": "Application performante et légère démontrant l'intégration d'une API tierce, l'optimisation des requêtes (cache, AbortController) et une UX soignée sur tous les supports.",
+    "lien_git": null,
+    "lien_autre": "https://weather-now-application-m-t-o.vercel.app/"
+  },
+  {
+    "titre_du_projet": "Industrial Management — Supervision et analytics industriels",
+    "description_projet": "Plateforme de gestion industrielle unifiée : suivi des machines, production, maintenance, stock, alertes et simulation IoT avec détection d'anomalies.",
+    "probleme": "Les entreprises industrielles gèrent machines, production, maintenance et stock dans des outils séparés et souvent manuels. Cette fragmentation empêche toute vision globale, retarde la détection des pannes et complique la planification de la maintenance.",
+    "solution": "La plateforme IMIP regroupe supervision, analytics et aide à la décision dans une seule interface. État des machines en temps réel, suivi de production (objectifs vs réalisé), gestion de la maintenance avec assignation de techniciens, alertes automatiques (panne, stock bas) et simulation IoT avec détection d'anomalies et estimation du risque de panne.",
+    "image": "/projects/industrial-management.png",
     "date": "2025-01-20",
     "techno_utilisee": [
       "React",
-      "NestJS",
-      "PostgreSQL",
-      "Prisma",
-      "Docker",
-      "Linux"
+      "Vite",
+      "Express 4",
+      "JWT",
+      "Docker Compose",
+      "GitHub Actions CI",
+      "Recharts"
     ],
     "fonctionnalite_principale": [
-      "Dashboard de suivi de l'état des équipements",
-      "Gestion des machines et historique de maintenance",
-      "Suivi des incidents et des alertes",
-      "Suivi de la production",
-      "Gestion des utilisateurs et rôles",
-      "Monitoring et logs (planned feature)"
+      "Authentification JWT avec rôles (admin, manager, technicien, observateur)",
+      "Suivi des machines : CRUD, statut (en marche, panne, maintenance, idle), historique",
+      "Suivi de production : objectifs vs réalisé, taux de réalisation, qualité",
+      "Maintenance : déclaration de panne, création d'intervention, assignation, coûts",
+      "Gestion du stock de pièces avec alertes de stock minimum",
+      "Alertes automatiques : machine en panne, stock bas, maintenance en attente, anomalies",
+      "Simulation IoT : capteurs (température, pression, vibration, énergie), détection d'anomalies",
+      "Tableau de bord avec KPIs et graphiques",
+      "Export CSV pour Power BI",
+      "Backend Express 4 : API REST avec authentification JWT, RBAC et données mock en mémoire"
     ],
-    "approche_technique": "Application web React connectée à une API NestJS avec PostgreSQL via Prisma. Déploiement conteneurisé Docker sur Linux. Architecture pensée pour un contexte industriel.",
-    "resultat": "Projet démontrant comment le développement logiciel et les pratiques DevOps (conteneurisation Docker) s'intègrent dans un environnement industriel.",
+    "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React (Vite) SPA. Backend Express 4 avec authentification JWT et contrôle d'accès basé sur les rôles (RBAC), API mock en mémoire pour le MVP. Orchestration conteneurisée avec Docker Compose. Pipeline CI GitHub Actions (tests, lint, build, e2e smoke). Roadmap : PostgreSQL, OpenAPI, MQTT/WebSocket, ML prédictif, Kubernetes.",
+    "resultat": "Projet ambitieux démontrant l'intégration du développement logiciel, des pratiques DevOps (Docker, CI) et de l'IoT dans un contexte industriel réel, avec une architecture pensée pour évoluer vers la production.",
     "lien_git": null,
-    "lien_autre": null
+    "lien_autre": "https://industrial-managment-frontend.vercel.app/login"
   },
   {
-    "titre_du_projet": "CRM — Gestion clients et contacts",
-    "description_projet": "Application métier CRM pour la gestion des clients, contacts et tâches. Dashboard centralisé pour organiser les données de l'entreprise.",
-    "image": "https://picsum.photos/seed/crm-business-app/800/600",
-    "date": "2024-10-10",
-    "techno_utilisee": [
-      "React",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL",
-      "JWT"
-    ],
-    "fonctionnalite_principale": [
-      "Gestion des clients et contacts (CRUD)",
-      "Gestion des tâches et suivi",
-      "Authentification et gestion des utilisateurs",
-      "Dashboard avec organisation des données",
-      "Architecture frontend/backend"
-    ],
-    "approche_technique": "Frontend React connecté à une API REST NestJS. Base de données PostgreSQL gérée via Prisma. Authentification JWT et architecture frontend/backend.",
-    "resultat": "Application métier démontrant la capacité à créer des outils destinés aux besoins réels des entreprises.",
-    "lien_git": null,
-    "lien_autre": null
-  },
-  {
-    "titre_du_projet": "School Management — Gestion scolaire",
-    "description_projet": "Plateforme de gestion scolaire multi-rôles : étudiants, enseignants, parents, classes, cours, exercices et paiements.",
-    "image": "https://picsum.photos/seed/school-management-rbac/800/600",
+    "titre_du_projet": "EduFlow — Gestion scolaire multi-rôles",
+    "description_projet": "Plateforme de gestion scolaire avec site public et portails par rôle (admin et enseignant) pour gérer étudiants, enseignants, classes, matières et notes.",
+    "probleme": "Les établissements scolaires (écoles privées, collèges, lycées, centres de formation) utilisent encore le papier ou les tableurs pour gérer élèves, notes et administration. Cela génère des erreurs, ralentit les processus et complique le suivi académique.",
+    "solution": "EduFlow propose un site public de présentation et deux portails sécurisés. L'admin gère tout (étudiants, enseignants, classes, matières, notes) avec calcul automatique des moyennes. L'enseignant accède à ses classes, ses élèves et saisit les notes filtrées par devoir. Le contrôle d'accès par rôle garantit que chacun ne voit que ce qui le concerne.",
+    "image": "/projects/eduflow.png",
     "date": "2024-03-12",
     "techno_utilisee": [
-      "Next.js",
-      "NestJS",
+      "React 19",
+      "Vite",
+      "NestJS 11",
+      "Prisma",
       "PostgreSQL",
-      "Prisma",
       "JWT",
-      "RBAC"
+      "React Router",
+      "Tailwind CSS v4",
+      "Radix UI (shadcn)",
+      "Recharts",
+      "Framer Motion",
+      "Lucide React",
+      "Sonner"
     ],
     "fonctionnalite_principale": [
-      "Gestion des étudiants, enseignants et parents",
-      "Gestion des classes, cours et exercices",
-      "Suivi des paiements",
-      "Rôles et permissions (RBAC) multi-utilisateurs",
-      "Authentification JWT et dashboard par rôle"
+      "Site public : accueil, à propos, programmes, actualités (+ détail), galerie (lightbox), contact",
+      "Portail admin : tableau de bord avec statistiques et graphiques, CRUD étudiants/enseignants/classes/matières/notes",
+      "Calcul automatique des moyennes par matière et générale",
+      "Portail enseignant : tableau de bord personnalisé, mes classes, mes élèves, saisie de notes filtrée par devoir",
+      "Contrôle d'accès par rôle (admin, enseignant, super admin ; futur : parent, élève)",
+      "Backend NestJS 11 : API REST avec authentification JWT, validation class-validator et Prisma pour PostgreSQL"
     ],
-    "approche_technique": "Frontend Next.js avec API NestJS. Base de données PostgreSQL via Prisma. Contrôle d'accès basé sur les rôles (RBAC) et authentification JWT.",
-    "resultat": "Application métier multi-rôles démontrant la capacité à concevoir des systèmes avec plusieurs types d'utilisateurs et permissions.",
+    "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React 19 + Vite (JavaScript) avec React Router, UI shadcn (Radix UI) et Tailwind CSS v4, animations Framer Motion, graphiques Recharts. Backend NestJS 11 avec authentification JWT, validation class-validator et Prisma comme ORM pour PostgreSQL. Couche de services abstraite côté frontend, conçue pour basculer du mock localStorage vers l'API NestJS sans refactor.",
+    "resultat": "Application métier multi-rôles démontrant la capacité à concevoir un système complexe avec plusieurs types d'utilisateurs, des permissions différenciées et une architecture prête pour le passage en production.",
     "lien_git": null,
-    "lien_autre": null
+    "lien_autre": "https://eduflow-seven-sigma.vercel.app/"
   },
   {
-    "titre_du_projet": "Task Manager — Gestion de tâches",
-    "description_projet": "Application Full-Stack de gestion de tâches : création, modification, suppression et organisation. Démonstration des fondamentaux Full-Stack.",
-    "image": "https://picsum.photos/seed/task-manager-crud/800/600",
-    "date": "2024-08-05",
-    "techno_utilisee": [
-      "React",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL"
-    ],
-    "fonctionnalite_principale": [
-      "Création, modification et suppression de tâches (CRUD)",
-      "Organisation et catégorisation",
-      "Authentification utilisateur",
-      "API REST et base de données"
-    ],
-    "approche_technique": "Frontend React connecté à une API NestJS. Persistance des données avec PostgreSQL via Prisma. Architecture frontend/backend classique.",
-    "resultat": "Projet démontrant les fondamentaux Full-Stack : CRUD, API, base de données et authentification.",
-    "lien_git": null,
-    "lien_autre": null
-  },
-  {
-    "titre_du_projet": "Personal Portfolio",
-    "description_projet": "Site portfolio personnel développé en React avec Tailwind CSS. Design responsive et organisation du code soignée.",
-    "image": "https://picsum.photos/seed/personal-portfolio-react/800/600",
+    "titre_du_projet": "Portfolio — Site personnel",
+    "description_projet": "Site portfolio single-page développé en React + Tailwind CSS présentant compétences, expériences, formation, projets et services avec design responsive.",
+    "probleme": "Un développeur freelance a besoin d'une vitrine professionnelle en ligne pour présenter son parcours, ses réalisations et ses services aux recruteurs et clients potentiels, sans dépendre uniquement de profils tiers (LinkedIn, GitHub).",
+    "solution": "Le portfolio est une application single-page React avec des sections claires : hero d'accueil, stack technique, à propos, expériences, formation, processus de travail, galerie de projets (avec modal détaillé), services et contact. Le tout est responsive, rapide et piloté par un fichier JSON pour les projets, ce qui rend les mises à jour très simples.",
+    "image": "/projects/portfolio.png",
     "date": "2025-02-01",
     "techno_utilisee": [
-      "React",
-      "Tailwind CSS"
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS v4",
+      "ESLint + typescript-eslint"
     ],
     "fonctionnalite_principale": [
-      "Développement frontend responsive",
-      "UI/UX et design moderne",
-      "Performance et optimisation",
-      "Organisation du code en composants réutilisables"
+      "Page unique avec navigation fluide entre sections",
+      "Galerie de projets avec modal détaillé (problème, solution, techno, fonctionnalités, résultats)",
+      "Section services et processus de travail",
+      "Formulaire de contact et lien WhatsApp",
+      "Design responsive et optimisé pour la performance",
+      "Données des projets externalisées dans un JSON pour des mises à jour faciles"
     ],
-    "approche_technique": "Application React avec Tailwind CSS. Architecture en composants, design responsive et attention portée à la performance.",
-    "resultat": "Projet personnel professionnel présentant mes réalisations et mon positionnement Full-Stack et DevOps.",
+    "approche_technique": "Application React 19 + TypeScript avec Vite. Styling avec Tailwind CSS v4. Architecture en composants réutilisables organisés par section. Données des projets séparées du code (projects.json) pour permettre l'ajout ou la modification sans toucher au code. ESLint avec typescript-eslint pour la qualité du code.",
+    "resultat": "Site portfolio professionnel, rapide et maintenable, présentant un positionnement Full-Stack et DevOps avec une expérience utilisateur soignée.",
     "lien_git": null,
-    "lien_autre": null
+    "lien_autre": "https://my-portfolio-lime-gamma-43.vercel.app/"
   }
 ]

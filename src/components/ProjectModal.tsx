@@ -121,6 +121,28 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             {project.description_projet}
           </p>
 
+          {project.probleme && (
+            <div className="mt-6 rounded-2xl bg-rose-50/60 p-4 ring-1 ring-rose-100 sm:p-5">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-rose-600">
+                Problème
+              </h4>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {project.probleme}
+              </p>
+            </div>
+          )}
+
+          {project.solution && (
+            <div className="mt-4 rounded-2xl bg-emerald-50/60 p-4 ring-1 ring-emerald-100 sm:p-5">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-emerald-600">
+                Solution
+              </h4>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {project.solution}
+              </p>
+            </div>
+          )}
+
           <div className="mt-6">
             <h4 className="text-sm font-bold uppercase tracking-wider text-brand-600">
               Technologies utilisées

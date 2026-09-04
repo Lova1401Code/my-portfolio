@@ -2,6 +2,9 @@
 export type ProjectFromJson = {
   titre_du_projet: string
   description_projet: string
+  probleme: string
+  solution: string
+  image: string
   date: string
   techno_utilisee: string[]
   fonctionnalite_principale: string[]
