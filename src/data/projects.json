@@ -137,7 +137,7 @@
     "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React 19 avec architecture Clean / Hexagonale (adapters, application, core, infrastructure, presentation), visualisations Recharts, validation Zod, API consommée via Axios. Backend NestJS 11 avec authentification JWT, validation class-validator et Prisma comme ORM pour PostgreSQL. Tests avec Vitest côté frontend et Jest côté backend.",
     "resultat": "Application métier complète démontrant la capacité à concevoir un outil répondant aux besoins réels d'une équipe commerciale, avec une architecture maintenable et évolutive.",
     "lien_git": null,
-    "lien_autre": "https://my-2o17v01f0-lova1401codes-projects.vercel.app"
+    "lien_autre": "https://my-crm-sage-eight.vercel.app"
   },
   {
     "titre_du_projet": "WeatherNow — Application météo en temps réel",
