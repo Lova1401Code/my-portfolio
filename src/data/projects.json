@@ -34,6 +34,43 @@
     "lien_autre": "https://taskflow-frontend-sigma-ten.vercel.app/login"
   },
   {
+    "titre_du_projet": "Plateforme de Streaming Vidéo",
+    "description_projet": "Plateforme de streaming vidéo à grande échelle avec API REST NestJS, gestion des VOD et chaînes en direct, système Continue Watching, authentification, paiement Stripe et scraping de données.",
+    "probleme": "La diffusion de contenus vidéo à grande échelle nécessite une architecture robuste capable de gérer la recherche de contenus, la lecture IPTV, le suivi de progression des utilisateurs et l'intégration d'un système de paiement, le tout avec des contraintes de performance et de confidentialité.",
+    "solution": "Plateforme full-stack avec backend NestJS modulaire (API REST, authentification, services métier), base PostgreSQL via Prisma, frontend React intégrant la recherche, le Continue Watching et la lecture IPTV via un service dédié (IPTV-Pool). Paiement Stripe, scraping Playwright et conteneurisation Docker.",
+    "image": "/projects/stream.png",
+    "date": "2025-06-01",
+    "techno_utilisee": [
+      "React",
+      "JavaScript",
+      "NestJS",
+      "Node.js",
+      "Prisma",
+      "PostgreSQL",
+      "Docker",
+      "Playwright",
+      "Stripe",
+      "Git"
+    ],
+    "fonctionnalite_principale": [
+      "API REST avec NestJS et architecture modulaire (principe SRP)",
+      "Authentification et gestion des accès",
+      "Service IPTV-Pool : gestion de la lecture VOD et chaînes en direct",
+      "Système Continue Watching (reprise de lecture)",
+      "Recherche de contenus",
+      "Intégration du système de paiement Stripe",
+      "Scraping de données avec Playwright",
+      "Conteneurisation de services avec Docker",
+      "Scripts Prisma pour la mise à jour des données",
+      "Collaboration en équipe (2 développeurs + Lead Developers)"
+    ],
+    "approche_technique": "Architecture Full-Stack frontend/backend. Frontend React (JavaScript) intégrant les API et la lecture IPTV. Backend NestJS avec Prisma ORM pour PostgreSQL, services modulaires respectant le Single Responsibility Principle. Conteneurisation Docker de certains services, scraping avec Playwright et paiement via Stripe. Projet en cours, accès privé (confidentialité).",
+    "resultat": "Expérience Full-Stack orientée production : travail sur l'architecture, les performances, la sécurité et l'UX d'une plateforme réelle à grande échelle, en collaboration avec une équipe de développeurs et Lead Developers.",
+    "lien_git": null,
+    "lien_autre": null,
+    "confidentiel": true
+  },
+  {
     "titre_du_projet": "Opportunity-Match — Plateforme de matching d'opportunités",
     "description_projet": "Plateforme de mise en relation entre candidats et opportunités (emploi, financement, partenariat) avec moteur de correspondance et suivi des candidatures.",
     "probleme": "La découverte manuelle d'opportunités pertinentes est lente et non personnalisée : les candidats parcourent des dizaines de sources sans filtrage adapté à leur profil, et les organisations reçoivent des candidatures peu qualifiées.",

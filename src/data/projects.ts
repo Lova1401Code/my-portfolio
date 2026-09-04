@@ -11,6 +11,7 @@ export type Project = {
   resultat: string
   lien_git: string | null
   lien_autre: string | null
+  confidentiel?: boolean
 }
 
 import projectsData from './projects.json'
