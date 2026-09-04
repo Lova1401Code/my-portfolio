@@ -77,13 +77,24 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       onClick={onClose}
     >
       <div
-        className="relative my-auto w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+        className="relative my-auto flex w-full max-w-6xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl lg:flex-row lg:max-h-[88vh]"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-        <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+        {/* Bouton fermer — commun aux deux colonnes */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-lg transition hover:bg-white hover:text-slate-900 sm:right-4 sm:top-4 sm:h-10 sm:w-10"
+          aria-label="Fermer"
+        >
+          <CloseIcon />
+        </button>
+
+        {/* Colonne image — gauche sur desktop, banner en haut sur mobile */}
+        <div className="relative aspect-square shrink-0 overflow-hidden bg-slate-100 lg:aspect-[4/5] lg:w-[45%]">
           <img
             src={project.image}
             alt={project.titre_du_projet}
@@ -92,17 +103,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             decoding="async"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"
+            className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/25 to-transparent lg:bg-gradient-to-t lg:from-slate-900/90 lg:via-slate-900/40 lg:to-slate-900/10"
             aria-hidden
           />
-          <button
-            type="button"
-            onClick={onClose}
-            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-lg transition hover:bg-white hover:text-slate-900 sm:right-4 sm:top-4 sm:h-10 sm:w-10"
-            aria-label="Fermer"
-          >
-            <CloseIcon />
-          </button>
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
             <time
               className="text-xs font-semibold uppercase tracking-wider text-white/80"
@@ -116,7 +119,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto p-4 sm:p-6 md:p-8">
+        {/* Colonne texte — droite sur desktop, dessous sur mobile */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 lg:max-h-[88vh]">
           <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
             {project.description_projet}
           </p>
@@ -163,7 +167,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             <h4 className="text-sm font-bold uppercase tracking-wider text-brand-600">
               Fonctionnalités
             </h4>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2">
               {project.fonctionnalite_principale.map((f, i) => (
                 <li
                   key={i}
@@ -183,7 +187,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </ul>
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4">
             <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100 sm:p-5">
               <h4 className="text-sm font-bold text-slate-900">Approche technique</h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
