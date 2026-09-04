@@ -224,12 +224,12 @@ export const testimonial = {
 }
 
 export const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com/al7373', short: 'GH' },
-  { label: 'LinkedIn', href: '#', short: 'in' },
+  { label: 'GitHub', href: 'https://github.com/Lova1401Code', short: 'GH' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lova-ramiharisoa-4094632a0/', short: 'in' },
 ] as const
 
 export const contactInfo = {
-  email: 'vous@exemple.com',
-  phone: '+261 XX XX XXX XX',
+  email: 'lova.ramiharisoa@gmail.com',
+  phone: '+261 33 83 934 43',
   location: 'Madagascar',
 }
