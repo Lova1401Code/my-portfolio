@@ -40,9 +40,9 @@ export function ServicesSection() {
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Du front web aux APIs et bases de données : je couvre tout
-            le cycle technique d'un produit digital, en privilégiant la clarté
-            du code et la maintenabilité.
+            Du front web aux APIs, bases de données et intégration IA : je
+            couvre tout le cycle technique d'un produit digital, en privilégiant
+            la clarté du code et la maintenabilité.
           </p>
         </div>
 
