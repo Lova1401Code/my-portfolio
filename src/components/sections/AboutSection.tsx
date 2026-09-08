@@ -79,10 +79,14 @@ export function AboutSection() {
                 >
                   Portfolio
                 </Button>
-                <Button variant="outline" className="gap-2">
+                <a
+                  href="/Lova_RAMIHARISOA_CV.pdf"
+                  download="Lova_RAMIHARISOA_CV.pdf"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-600 bg-white px-5 py-2.5 text-sm font-semibold text-brand-600 transition hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 sm:px-6 sm:py-3"
+                >
                   <DownloadIcon />
                   Télécharger le CV
-                </Button>
+                </a>
               </div>
             </div>
           </div>
