@@ -92,7 +92,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 lg:block">
+        <div className="hidden shrink-0 lg:block lg:mr-2">
           <a
             href={author.whatsappHref}
             target="_blank"
