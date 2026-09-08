@@ -43,10 +43,10 @@ export function Header() {
   return (
     <header className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
       <div
-        className={`mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-slate-200/60 px-3 py-2 backdrop-blur-xl transition-all duration-300 sm:px-4 sm:gap-4 lg:px-6 ${
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border border-slate-200/60 px-3 py-2 backdrop-blur-xl transition-all duration-300 sm:px-4 sm:gap-4 lg:px-6 ${
             scrolled
-            ? 'h-14 bg-white/95 shadow-md shadow-slate-300/30'
-            : 'h-16 bg-white/80 shadow-lg shadow-slate-300/40'
+            ? 'h-12 bg-white/95 shadow-md shadow-slate-300/30'
+            : 'h-14 bg-white/80 shadow-lg shadow-slate-300/40'
         }`}
       >
         <a
@@ -118,7 +118,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="mx-auto mt-2 max-w-5xl lg:hidden">
+        <div className="mx-auto mt-2 max-w-6xl lg:hidden">
           <div
             id="mobile-nav"
             className="rounded-3xl border border-slate-200/60 bg-white/95 p-4 shadow-lg shadow-slate-300/30 backdrop-blur-xl"
