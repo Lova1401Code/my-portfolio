@@ -4,7 +4,7 @@ export const author = {
   brandTitle: 'Lova Ramiharisoa',
   logoInitial: 'LR',
   displayName: 'Full-Stack Developer',
-  tagline: 'Full-Stack Developer | DevOps',
+  tagline: 'Full-Stack Developer | DevOps · AI Integration',
   whatsappHref: 'https://wa.me/261334393443',
 } as const
 
@@ -30,9 +30,9 @@ export const headerNavLinks = [
 ] as const
 
 export const hero = {
-  title: 'Full-Stack Developer | DevOps',
+  title: 'Full-Stack Developer | DevOps · AI Integration',
   subtitle:
-    "Je développe des applications web performantes avec React, Next.js, NestJS et PostgreSQL (Prisma). Curieux et rigoureux, J'intègre également Docker, CI/CD et Nginx pour automatiser et faciliter le déploiement des applications.",
+    "Je développe des applications web performantes avec React, Next.js, NestJS et PostgreSQL (Prisma). Curieux et rigoureux, j'intègre également Docker, CI/CD et Nginx pour automatiser et faciliter le déploiement, ainsi que les API LLM (OpenAI) pour augmenter mes applications via le prompt engineering, des assistants IA et l'automatisation de workflows.",
   stats: [
     { value: '2+', label: "Années d'expérience", icon: 'briefcase' as const },
     { value: String(projects.length), label: 'Projets', icon: 'layers' as const },
@@ -50,6 +50,7 @@ export const about = {
     "Développeur Full-Stack spécialisé en JavaScript et TypeScript, je conçois des applications web complètes, de l'interface utilisateur jusqu'au backend, aux API et à la base de données.",
     "Je travaille principalement avec React, Next.js, NestJS, PostgreSQL et Prisma.",
     "Je m'intéresse également aux pratiques DevOps afin de mieux maîtriser le cycle de vie complet d'une application : conteneurisation avec Docker, automatisation avec CI/CD et déploiement sur serveur avec Nginx.",
+    "J'intègre également des API LLM (OpenAI) dans mes applications : prompt engineering, assistants IA et automatisation de workflows, pour concevoir des outils métier augmentés par l'IA.",
     "J'apprécie particulièrement les projets nécessitant la conception d'applications métier, de dashboards, d'API et d'architectures frontend/backend.",
     "Disponible pour des missions freelance, des collaborations à distance et des opportunités en CDI ou CDD.",
   ],
@@ -196,6 +197,11 @@ export const techStack = [
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
     dark: false,
   },
+  {
+    name: 'OpenAI',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg',
+    dark: true,
+  },
 ] as const
 
 export const services = [
@@ -208,6 +214,11 @@ export const services = [
     title: 'DevOps & déploiement',
     description:
       "Conteneurisation Docker, pipelines CI/CD avec GitHub Actions, déploiement Nginx, monitoring et logs. Capacité à déployer et maintenir ce que je développe.",
+  },
+  {
+    title: 'Intégration IA & LLM',
+    description:
+      "Intégration d'API LLM (OpenAI), prompt engineering, assistants IA et automatisation de workflows. Des applications métier augmentées par l'IA.",
   },
 ] as const
 

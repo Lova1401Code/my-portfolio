@@ -37,7 +37,7 @@ export function StackSection() {
           </p>
         </div>
 
-        <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-4 md:grid-cols-5 lg:grid-cols-9">
+        <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-4 md:grid-cols-5 lg:grid-cols-10">
           {techStack.map((tech) => (
             <li key={tech.name} className="group">
               <div className="flex flex-col items-center gap-2 rounded-2xl bg-white p-3 shadow-md ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-brand-200 sm:gap-3 sm:p-5">
