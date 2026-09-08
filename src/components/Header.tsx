@@ -44,9 +44,9 @@ export function Header() {
     <header className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
       <div
         className={`mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-slate-200/60 px-3 py-2 backdrop-blur-xl transition-all duration-300 sm:px-4 sm:gap-4 lg:px-6 ${
-          scrolled
-            ? 'h-12 bg-white/95 shadow-md shadow-slate-300/30'
-            : 'h-14 bg-white/80 shadow-lg shadow-slate-300/40'
+            scrolled
+            ? 'h-14 bg-white/95 shadow-md shadow-slate-300/30'
+            : 'h-16 bg-white/80 shadow-lg shadow-slate-300/40'
         }`}
       >
         <a
