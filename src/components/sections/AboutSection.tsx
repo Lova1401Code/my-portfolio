@@ -1,5 +1,6 @@
 import { Container } from '../Container'
 import { Button } from '../Button'
+import { SocialIcon } from '../SocialIcon'
 import { useLanguage } from '../../i18n/useLanguage'
 
 function DownloadIcon() {
@@ -56,7 +57,7 @@ export function AboutSection() {
                     aria-label={s.label}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white shadow-sm transition hover:bg-brand-700"
                   >
-                    <span className="text-xs font-semibold">{s.short}</span>
+                    <SocialIcon label={s.label} className="h-5 w-5" />
                   </a>
                 ))}
               </div>

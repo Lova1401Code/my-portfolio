@@ -1,6 +1,7 @@
 import { type FormEvent, type InputHTMLAttributes, useState } from 'react'
 import { Container } from '../Container'
 import { Button } from '../Button'
+import { SocialIcon } from '../SocialIcon'
 import { useLanguage } from '../../i18n/useLanguage'
 
 function WhatsAppIcon({ className = 'h-5 w-5' }: { className?: string }) {
@@ -163,9 +164,9 @@ export function ContactSection() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-xs font-semibold text-slate-600 transition hover:border-brand-200 hover:bg-brand-50 hover:text-brand-600"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-brand-200 hover:bg-brand-50 hover:text-brand-600"
                 >
-                  {s.short}
+                  <SocialIcon label={s.label} className="h-5 w-5" />
                 </a>
               ))}
             </div>

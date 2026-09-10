@@ -1,4 +1,5 @@
 import { Container } from './Container'
+import { SocialIcon } from './SocialIcon'
 import { useLanguage } from '../i18n/useLanguage'
 
 export function Footer() {
@@ -39,8 +40,9 @@ export function Footer() {
                     ? { target: '_blank', rel: 'noreferrer' as const }
                     : {})}
                   className="hover:text-white"
+                  aria-label={s.label}
                 >
-                  {s.label}
+                  <SocialIcon label={s.label} className="h-5 w-5" />
                 </a>
               )
             })}
