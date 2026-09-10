@@ -1,6 +1,6 @@
 import { Container } from '../Container'
 import { Button } from '../Button'
-import { about, socialLinks } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 function DownloadIcon() {
   return (
@@ -17,6 +17,10 @@ function DownloadIcon() {
 }
 
 export function AboutSection() {
+  const { t, lang } = useLanguage()
+  const about = t.about
+  const socialLinks = t.socialLinks
+
   return (
     <section id="apropos" className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-14 md:py-24">
       <Container>
@@ -41,7 +45,7 @@ export function AboutSection() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
                   </span>
-                  Disponible pour un poste
+                  {lang === 'fr' ? 'Disponible pour un poste' : 'Available for a position'}
                 </div>
               </div>
               <div className="mt-8 flex gap-2">
@@ -77,7 +81,7 @@ export function AboutSection() {
                       ?.scrollIntoView({ behavior: 'smooth' })
                   }
                 >
-                  Portfolio
+                  {lang === 'fr' ? 'Portfolio' : 'Portfolio'}
                 </Button>
                 <a
                   href="/Lova_RAMIHARISOA_CV.pdf"
@@ -85,7 +89,7 @@ export function AboutSection() {
                   className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-600 bg-white px-5 py-2.5 text-sm font-semibold text-brand-600 transition hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 sm:px-6 sm:py-3"
                 >
                   <DownloadIcon />
-                  Télécharger le CV
+                  {lang === 'fr' ? 'Télécharger le CV' : 'Download resume'}
                 </a>
               </div>
             </div>

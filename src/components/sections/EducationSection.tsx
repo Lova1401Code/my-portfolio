@@ -1,5 +1,5 @@
 import { Container } from '../Container'
-import { education } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 function DiplomaIcon() {
   return (
@@ -16,6 +16,9 @@ function DiplomaIcon() {
 }
 
 export function EducationSection() {
+  const { t, lang } = useLanguage()
+  const education = t.education
+
   return (
     <section
       id="formation"
@@ -33,18 +36,19 @@ export function EducationSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Formation
+            {lang === 'fr' ? 'Formation' : 'Education'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Diplômes &amp; formations
+            {lang === 'fr' ? 'Diplômes & formations' : 'Degrees & education'}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Mes diplômes, certifications et formations qui ont forgé mes
-            compétences techniques.
+            {lang === 'fr'
+              ? 'Mes diplômes, certifications et formations qui ont forgé mes compétences techniques.'
+              : 'My degrees, certifications and training that shaped my technical skills.'}
           </p>
         </div>
 

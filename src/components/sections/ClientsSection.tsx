@@ -1,7 +1,10 @@
 import { Container } from '../Container'
-import { collaborationHighlight } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 export function ClientsSection() {
+  const { t, lang } = useLanguage()
+  const collaborationHighlight = t.collaborationHighlight
+
   return (
     <section className="relative overflow-hidden border-y border-slate-100 bg-gradient-to-b from-white via-purple-50/30 to-white py-12 md:py-16">
       <div
@@ -11,7 +14,7 @@ export function ClientsSection() {
       <Container>
         <div className="mx-auto max-w-3xl rounded-3xl border border-white/60 bg-white/70 p-6 text-center shadow-md backdrop-blur-md sm:p-8 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Collaboration
+            {lang === 'fr' ? 'Collaboration' : 'Collaboration'}
           </p>
           <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl md:text-3xl">
             {collaborationHighlight.title}

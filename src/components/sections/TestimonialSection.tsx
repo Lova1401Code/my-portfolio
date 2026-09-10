@@ -1,7 +1,10 @@
 import { Container } from '../Container'
-import { testimonial } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 export function TestimonialSection() {
+  const { t, lang } = useLanguage()
+  const testimonial = t.testimonial
+
   return (
     <section
       className="relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-white py-14 md:py-24"
@@ -18,10 +21,10 @@ export function TestimonialSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Témoignage
+            {lang === 'fr' ? 'Témoignage' : 'Testimonial'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Ce qu'on dit de mon travail
+            {lang === 'fr' ? 'Ce qu\'on dit de mon travail' : 'What people say about my work'}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"

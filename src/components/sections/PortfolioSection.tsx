@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Container } from '../Container'
 import { Button } from '../Button'
-import { projects } from '../../data/projects'
+import { projects, localizeProject } from '../../data/projects'
 import { ProjectModal } from '../ProjectModal'
+import { useLanguage } from '../../i18n/useLanguage'
 
-function formatDate(iso: string) {
+function formatDate(iso: string, lang: 'fr' | 'en') {
   try {
-    return new Intl.DateTimeFormat('fr-FR', {
+    return new Intl.DateTimeFormat(lang === 'fr' ? 'fr-FR' : 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -31,7 +32,9 @@ function ArrowIcon() {
 }
 
 export function PortfolioSection() {
-  const [selected, setSelected] = useState<(typeof projects)[number] | null>(null)
+  const { lang } = useLanguage()
+  const [selected, setSelected] = useState<number | null>(null)
+  const localizedProjects = projects.map((p) => localizeProject(p, lang))
 
   return (
     <section
@@ -50,7 +53,7 @@ export function PortfolioSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Réalisations
+            {lang === 'fr' ? 'Réalisations' : 'Projects'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
             Portfolio
@@ -60,17 +63,18 @@ export function PortfolioSection() {
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Une sélection de projets web et full stack que j'ai conçus
-            et développés. Cliquez sur un projet pour voir les détails.
+            {lang === 'fr'
+              ? "Une sélection de projets web et full stack que j'ai conçus et développés. Cliquez sur un projet pour voir les détails."
+              : 'A selection of web and full stack projects I designed and built. Click a project to see the details.'}
           </p>
         </div>
 
         <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {projects.map((project) => (
+          {localizedProjects.map((project, index) => (
             <article
               key={`${project.titre_du_projet}-${project.date}`}
               className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:bg-white hover:shadow-xl"
-              onClick={() => setSelected(project)}
+              onClick={() => setSelected(index)}
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
                 <img
@@ -87,7 +91,7 @@ export function PortfolioSection() {
                   aria-hidden
                 >
                   <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg">
-                    Voir les détails
+                    {lang === 'fr' ? 'Voir les détails' : 'View details'}
                     <ArrowIcon />
                   </span>
                 </div>
@@ -96,7 +100,7 @@ export function PortfolioSection() {
                     <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" aria-hidden>
                       <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                     </svg>
-                    Confidentiel
+                    {lang === 'fr' ? 'Confidentiel' : 'Confidential'}
                   </span>
                 )}
               </div>
@@ -106,7 +110,7 @@ export function PortfolioSection() {
                   className="text-xs font-semibold uppercase tracking-wider text-brand-600"
                   dateTime={project.date}
                 >
-                  {formatDate(project.date)}
+                  {formatDate(project.date, lang)}
                 </time>
                 <h3 className="mt-2 text-base font-bold leading-snug text-slate-900 sm:text-lg">
                   {project.titre_du_projet}
@@ -132,7 +136,7 @@ export function PortfolioSection() {
                 </div>
 
                 <div className="mt-4 flex items-center gap-2 border-t border-slate-100 pt-4 text-sm font-semibold text-brand-600">
-                  Voir le projet
+                  {lang === 'fr' ? 'Voir le projet' : 'View project'}
                   <ArrowIcon />
                 </div>
               </div>
@@ -149,12 +153,15 @@ export function PortfolioSection() {
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            Discutons de votre projet
+            {lang === 'fr' ? 'Discutons de votre projet' : "Let's discuss your project"}
           </Button>
         </div>
       </Container>
 
-      <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      <ProjectModal
+        project={selected !== null ? localizedProjects[selected] : null}
+        onClose={() => setSelected(null)}
+      />
     </section>
   )
 }

@@ -1,28 +1,51 @@
 import { Container } from '../Container'
-import { experiences } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
+import type { Lang } from '../../site-content'
 
 const typeConfig: Record<
-  string,
-  { label: string; classes: string; icon: string }
+  Lang,
+  Record<string, { label: string; classes: string; icon: string }>
 > = {
-  job: {
-    label: 'Collaboration',
-    classes: 'bg-brand-100 text-brand-700 ring-brand-200',
-    icon: 'M9 17V9m6 8V5m-9 12h12',
+  fr: {
+    job: {
+      label: 'Collaboration',
+      classes: 'bg-brand-100 text-brand-700 ring-brand-200',
+      icon: 'M9 17V9m6 8V5m-9 12h12',
+    },
+    freelance: {
+      label: 'Freelance',
+      classes: 'bg-purple-100 text-purple-700 ring-purple-200',
+      icon: 'M12 3v18M5 10h14',
+    },
+    intern: {
+      label: 'Stage',
+      classes: 'bg-sky-100 text-sky-700 ring-sky-200',
+      icon: 'M4 4h16v16H4zM9 9h6v6H9z',
+    },
   },
-  freelance: {
-    label: 'Freelance',
-    classes: 'bg-purple-100 text-purple-700 ring-purple-200',
-    icon: 'M12 3v18M5 10h14',
-  },
-  intern: {
-    label: 'Stage',
-    classes: 'bg-sky-100 text-sky-700 ring-sky-200',
-    icon: 'M4 4h16v16H4zM9 9h6v6H9z',
+  en: {
+    job: {
+      label: 'Collaboration',
+      classes: 'bg-brand-100 text-brand-700 ring-brand-200',
+      icon: 'M9 17V9m6 8V5m-9 12h12',
+    },
+    freelance: {
+      label: 'Freelance',
+      classes: 'bg-purple-100 text-purple-700 ring-purple-200',
+      icon: 'M12 3v18M5 10h14',
+    },
+    intern: {
+      label: 'Internship',
+      classes: 'bg-sky-100 text-sky-700 ring-sky-200',
+      icon: 'M4 4h16v16H4zM9 9h6v6H9z',
+    },
   },
 }
 
 export function ExperienceSection() {
+  const { t, lang } = useLanguage()
+  const experiences = t.experiences
+
   return (
     <section
       id="experiences"
@@ -40,18 +63,19 @@ export function ExperienceSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Parcours
+            {lang === 'fr' ? 'Parcours' : 'Journey'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Expériences professionnelles
+            {lang === 'fr' ? 'Expériences professionnelles' : 'Professional experience'}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Mon parcours en développement web, des premiers projets
-            aux missions récentes.
+            {lang === 'fr'
+              ? 'Mon parcours en développement web, des premiers projets aux missions récentes.'
+              : 'My journey in web development, from early projects to recent missions.'}
           </p>
         </div>
 
@@ -62,7 +86,7 @@ export function ExperienceSection() {
           />
 
           {experiences.map((item, i) => {
-            const tc = typeConfig[item.type] ?? typeConfig.job
+            const tc = typeConfig[lang][item.type] ?? typeConfig[lang].job
             const isLeft = i % 2 === 0
             return (
               <li

@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import { Button } from './Button'
-import { projects } from '../data/projects'
+import type { LocalizedProject } from '../data/projects'
+import { useLanguage } from '../i18n/useLanguage'
 
-type Project = (typeof projects)[number]
-
-function formatDate(iso: string) {
+function formatDate(iso: string, lang: 'fr' | 'en') {
   try {
-    return new Intl.DateTimeFormat('fr-FR', {
+    return new Intl.DateTimeFormat(lang === 'fr' ? 'fr-FR' : 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -51,11 +50,13 @@ function CloseIcon() {
 }
 
 type ProjectModalProps = {
-  project: Project | null
+  project: LocalizedProject | null
   onClose: () => void
 }
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const { lang } = useLanguage()
+
   useEffect(() => {
     if (!project) return
     const onKey = (e: KeyboardEvent) => {
@@ -83,17 +84,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-        {/* Bouton fermer — commun aux deux colonnes */}
         <button
           type="button"
           onClick={onClose}
           className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-lg transition hover:bg-white hover:text-slate-900 sm:right-4 sm:top-4 sm:h-10 sm:w-10"
-          aria-label="Fermer"
+          aria-label={lang === 'fr' ? 'Fermer' : 'Close'}
         >
           <CloseIcon />
         </button>
 
-        {/* Colonne image — gauche sur desktop, banner en haut sur mobile */}
         <div className="relative aspect-square shrink-0 overflow-hidden bg-slate-100 lg:aspect-[4/5] lg:w-[45%]">
           <img
             src={project.image}
@@ -111,7 +110,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               className="text-xs font-semibold uppercase tracking-wider text-white/80"
               dateTime={project.date}
             >
-              {formatDate(project.date)}
+              {formatDate(project.date, lang)}
             </time>
             <h3 id="modal-title" className="mt-1 text-xl font-bold text-white sm:text-2xl">
               {project.titre_du_projet}
@@ -122,13 +121,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                Projet confidentiel
+                {lang === 'fr' ? 'Projet confidentiel' : 'Confidential project'}
               </span>
             )}
           </div>
         </div>
 
-        {/* Colonne texte — droite sur desktop, dessous sur mobile */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 lg:max-h-[88vh]">
           <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
             {project.description_projet}
@@ -137,7 +135,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {project.probleme && (
             <div className="mt-6 rounded-2xl bg-rose-50/60 p-4 ring-1 ring-rose-100 sm:p-5">
               <h4 className="text-sm font-bold uppercase tracking-wider text-rose-600">
-                Problème
+                {lang === 'fr' ? 'Problème' : 'Problem'}
               </h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {project.probleme}
@@ -148,7 +146,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {project.solution && (
             <div className="mt-4 rounded-2xl bg-emerald-50/60 p-4 ring-1 ring-emerald-100 sm:p-5">
               <h4 className="text-sm font-bold uppercase tracking-wider text-emerald-600">
-                Solution
+                {lang === 'fr' ? 'Solution' : 'Solution'}
               </h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {project.solution}
@@ -158,7 +156,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <div className="mt-6">
             <h4 className="text-sm font-bold uppercase tracking-wider text-brand-600">
-              Technologies utilisées
+              {lang === 'fr' ? 'Technologies utilisées' : 'Technologies used'}
             </h4>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.techno_utilisee.map((t) => (
@@ -174,7 +172,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <div className="mt-6">
             <h4 className="text-sm font-bold uppercase tracking-wider text-brand-600">
-              Fonctionnalités
+              {lang === 'fr' ? 'Fonctionnalités' : 'Features'}
             </h4>
             <ul className="mt-3 grid gap-2">
               {project.fonctionnalite_principale.map((f, i) => (
@@ -198,13 +196,17 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           <div className="mt-6 grid gap-4">
             <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100 sm:p-5">
-              <h4 className="text-sm font-bold text-slate-900">Approche technique</h4>
+              <h4 className="text-sm font-bold text-slate-900">
+                {lang === 'fr' ? 'Approche technique' : 'Technical approach'}
+              </h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {project.approche_technique}
               </p>
             </div>
             <div className="rounded-2xl bg-brand-50/60 p-4 ring-1 ring-brand-100 sm:p-5">
-              <h4 className="text-sm font-bold text-slate-900">Résultat</h4>
+              <h4 className="text-sm font-bold text-slate-900">
+                {lang === 'fr' ? 'Résultat' : 'Result'}
+              </h4>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {project.resultat}
               </p>
@@ -221,7 +223,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
                 >
                   <GitHubIcon />
-                  Voir sur GitHub
+                  {lang === 'fr' ? 'Voir sur GitHub' : 'View on GitHub'}
                 </a>
               )}
               {project.lien_autre && (
@@ -231,7 +233,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   onClick={() => window.open(project.lien_autre!, '_blank')}
                 >
                   <LinkIcon />
-                  Voir le site
+                  {lang === 'fr' ? 'Voir le site' : 'View site'}
                 </Button>
               )}
             </div>

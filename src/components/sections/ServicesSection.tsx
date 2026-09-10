@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Container } from '../Container'
 import { Button } from '../Button'
-import { services } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 const serviceIcons = [
   'M9 17V9m6 8V5m-9 12h12',
@@ -11,7 +11,9 @@ const serviceIcons = [
 ] as const
 
 export function ServicesSection() {
+  const { t, lang } = useLanguage()
   const [active, setActive] = useState(0)
+  const services = t.services
 
   return (
     <section
@@ -30,19 +32,19 @@ export function ServicesSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Expertise
+            {lang === 'fr' ? 'Expertise' : 'Expertise'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Que fais-je&nbsp;?
+            {lang === 'fr' ? 'Que fais-je\u00A0?' : 'What do I do\u00A0?'}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Du front web aux APIs, bases de données et intégration IA : je
-            couvre tout le cycle technique d'un produit digital, en privilégiant
-            la clarté du code et la maintenabilité.
+            {lang === 'fr'
+              ? "Du front web aux APIs, bases de données et intégration IA : je couvre tout le cycle technique d'un produit digital, en privilégiant la clarté du code et la maintenabilité."
+              : 'From web frontend to APIs, databases and AI integration: I cover the entire technical cycle of a digital product, favoring code clarity and maintainability.'}
           </p>
         </div>
 
@@ -120,7 +122,7 @@ export function ServicesSection() {
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
-                Me recruter
+                {lang === 'fr' ? 'Me recruter' : 'Hire me'}
               </Button>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import { Container } from '../Container'
 import { Button } from '../Button'
-import { hero } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 function StatIcon({ type }: { type: 'briefcase' | 'layers' | 'users' }) {
   const common = 'h-5 w-5 text-brand-600'
@@ -42,6 +42,9 @@ function StatIcon({ type }: { type: 'briefcase' | 'layers' | 'users' }) {
 }
 
 export function HeroSection() {
+  const { t, lang } = useLanguage()
+  const hero = t.hero
+
   return (
     <section
       id="accueil"
@@ -73,7 +76,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
-                Me recruter
+                {lang === 'fr' ? 'Me recruter' : 'Hire me'}
               </Button>
               <Button
                 variant="outline"
@@ -83,7 +86,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
-                Voir le portfolio
+                {lang === 'fr' ? 'Voir le portfolio' : 'View portfolio'}
               </Button>
             </div>
           </div>

@@ -1,7 +1,10 @@
 import { Container } from '../Container'
 import { Button } from '../Button'
+import { useLanguage } from '../../i18n/useLanguage'
 
 export function CtaBannerSection() {
+  const { lang } = useLanguage()
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-900 to-navy-950 py-14 md:py-20">
       <div
@@ -15,14 +18,17 @@ export function CtaBannerSection() {
 
       <Container className="text-center">
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-300">
-          Collaboration
+          {lang === 'fr' ? 'Collaboration' : 'Collaboration'}
         </p>
         <h2 className="mx-auto mt-2 max-w-3xl text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl md:text-4xl">
-          Vous avez une idée de projet&nbsp;? Discutons-en ensemble.
+          {lang === 'fr'
+            ? 'Vous avez une idée de projet\u00A0? Discutons-en ensemble.'
+            : 'Got a project idea?\u00A0Let\u2019s talk about it.'}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
-          Partagez votre contexte, vos objectifs et vos contraintes : je vous
-          réponds sous 48h avec une proposition claire.
+          {lang === 'fr'
+            ? 'Partagez votre contexte, vos objectifs et vos contraintes : je vous réponds sous 48h avec une proposition claire.'
+            : 'Share your context, goals and constraints: I\u2019ll get back to you within 48h with a clear proposal.'}
         </p>
         <div className="mt-8 flex justify-center">
           <Button
@@ -33,7 +39,7 @@ export function CtaBannerSection() {
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            Travaillons ensemble →
+            {lang === 'fr' ? 'Travaillons ensemble →' : "Let's work together →"}
           </Button>
         </div>
       </Container>

@@ -1,7 +1,7 @@
 import { type FormEvent, type InputHTMLAttributes, useState } from 'react'
 import { Container } from '../Container'
 import { Button } from '../Button'
-import { author, contactInfo, socialLinks } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 function WhatsAppIcon({ className = 'h-5 w-5' }: { className?: string }) {
   return (
@@ -36,6 +36,7 @@ function Field({
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeaqebza'
 
 export function ContactSection() {
+  const { t, lang } = useLanguage()
   const [status, setStatus] = useState<'idle' | 'loading' | 'sent' | 'error'>('idle')
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -77,17 +78,19 @@ export function ContactSection() {
       <Container>
         <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Contact
+            {lang === 'fr' ? 'Contact' : 'Contact'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Parlons de votre projet
+            {lang === 'fr' ? 'Parlons de votre projet' : "Let's talk about your project"}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Un créneau visio ou un message suffisent pour cadrer le besoin.
+            {lang === 'fr'
+              ? 'Un créneau visio ou un message suffisent pour cadrer le besoin.'
+              : 'A video call or a message is enough to scope the need.'}
           </p>
         </div>
 
@@ -103,10 +106,10 @@ export function ContactSection() {
                 <div className="min-w-0">
                   <p className="font-semibold text-slate-900">Email</p>
                   <a
-                    href={`mailto:${contactInfo.email}`}
+                    href={`mailto:${t.contactInfo.email}`}
                     className="break-all text-brand-600 transition hover:text-brand-700"
                   >
-                    {contactInfo.email}
+                    {t.contactInfo.email}
                   </a>
                 </div>
               </li>
@@ -117,8 +120,10 @@ export function ContactSection() {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-semibold text-slate-900">Localisation</p>
-                  <p>{contactInfo.location}</p>
+                  <p className="font-semibold text-slate-900">
+                    {lang === 'fr' ? 'Localisation' : 'Location'}
+                  </p>
+                  <p>{t.contactInfo.location}</p>
                 </div>
               </li>
               <li className="flex items-center gap-3 sm:gap-4">
@@ -128,30 +133,32 @@ export function ContactSection() {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-semibold text-slate-900">Téléphone</p>
+                  <p className="font-semibold text-slate-900">
+                    {lang === 'fr' ? 'Téléphone' : 'Phone'}
+                  </p>
                   <a
-                    href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+                    href={`tel:${t.contactInfo.phone.replace(/\s/g, '')}`}
                     className="text-brand-600 transition hover:text-brand-700"
                   >
-                    {contactInfo.phone}
+                    {t.contactInfo.phone}
                   </a>
                 </div>
               </li>
             </ul>
 
             <a
-              href={author.whatsappHref}
+              href={t.author.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contacter sur WhatsApp"
+              aria-label={lang === 'fr' ? 'Contacter sur WhatsApp' : 'Contact on WhatsApp'}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md shadow-[#25D366]/30 transition hover:bg-[#1da851]"
             >
               <WhatsAppIcon />
-              Discuter sur WhatsApp
+              {lang === 'fr' ? 'Discuter sur WhatsApp' : 'Chat on WhatsApp'}
             </a>
 
             <div className="mt-6 flex gap-3">
-              {socialLinks.map((s) => (
+              {t.socialLinks.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
@@ -176,10 +183,10 @@ export function ContactSection() {
                   </svg>
                 </span>
                 <p className="mt-4 text-base font-semibold text-slate-900 sm:text-lg">
-                  Merci, message bien reçu.
+                  {lang === 'fr' ? 'Merci, message bien reçu.' : 'Thank you, message received.'}
                 </p>
                 <p className="mt-2 text-sm text-slate-600">
-                  Je vous réponds dès que possible.
+                  {lang === 'fr' ? 'Je vous réponds dès que possible.' : 'I will get back to you as soon as possible.'}
                 </p>
                 <Button
                   variant="outline"
@@ -187,7 +194,7 @@ export function ContactSection() {
                   type="button"
                   onClick={() => setStatus('idle')}
                 >
-                  Envoyer un autre message
+                  {lang === 'fr' ? 'Envoyer un autre message' : 'Send another message'}
                 </Button>
               </div>
             ) : status === 'error' ? (
@@ -201,10 +208,12 @@ export function ContactSection() {
                   </svg>
                 </span>
                 <p className="mt-4 text-base font-semibold text-slate-900 sm:text-lg">
-                  Échec de l'envoi.
+                  {lang === 'fr' ? "Échec de l'envoi." : 'Sending failed.'}
                 </p>
                 <p className="mt-2 text-sm text-slate-600">
-                  Une erreur est survenue. Veuillez réessayer ou m'écrire directement par email.
+                  {lang === 'fr'
+                    ? "Une erreur est survenue. Veuillez réessayer ou m'écrire directement par email."
+                    : 'An error occurred. Please try again or write to me directly by email.'}
                 </p>
                 <Button
                   variant="outline"
@@ -212,13 +221,13 @@ export function ContactSection() {
                   type="button"
                   onClick={() => setStatus('idle')}
                 >
-                  Réessayer
+                  {lang === 'fr' ? 'Réessayer' : 'Try again'}
                 </Button>
               </div>
             ) : (
               <form className="space-y-4" onSubmit={onSubmit}>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field id="name" name="name" label="Nom" required autoComplete="name" />
+                  <Field id="name" name="name" label={lang === 'fr' ? 'Nom' : 'Name'} required autoComplete="name" />
                   <Field
                     id="email"
                     name="email"
@@ -228,11 +237,11 @@ export function ContactSection() {
                     autoComplete="email"
                   />
                 </div>
-                <Field id="subject" name="subject" label="Sujet" required />
-                <Field id="location" name="location" label="Localisation" />
+                <Field id="subject" name="subject" label={lang === 'fr' ? 'Sujet' : 'Subject'} required />
+                <Field id="location" name="location" label={lang === 'fr' ? 'Localisation' : 'Location'} />
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="message" className="text-sm font-medium text-slate-700">
-                    Message
+                    {lang === 'fr' ? 'Message' : 'Message'}
                   </label>
                   <textarea
                     id="message"
@@ -243,7 +252,9 @@ export function ContactSection() {
                   />
                 </div>
                 <Button type="submit" disabled={status === 'loading'} className="w-full sm:w-auto">
-                  {status === 'loading' ? 'Envoi…' : 'Envoyer →'}
+                  {status === 'loading'
+                    ? lang === 'fr' ? 'Envoi…' : 'Sending…'
+                    : lang === 'fr' ? 'Envoyer →' : 'Send →'}
                 </Button>
               </form>
             )}

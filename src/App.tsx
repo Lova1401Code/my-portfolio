@@ -12,26 +12,29 @@ import { TestimonialSection } from './components/sections/TestimonialSection'
 import { WorkProcessSection } from './components/sections/WorkProcessSection'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { LanguageProvider } from './i18n/LanguageContext'
 
 export default function App() {
   return (
-    <div className="min-h-dvh bg-white text-slate-900">
-      <Header />
-      <main>
-        <HeroSection />
-        <StackSection />
-        <AboutSection />
-        <ExperienceSection />
-        <EducationSection />
-        <WorkProcessSection />
-        <PortfolioSection />
-        <CtaBannerSection />
-        <ServicesSection />
-        <ClientsSection />
-        <TestimonialSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-dvh bg-white text-slate-900">
+        <Header />
+        <main>
+          <HeroSection />
+          <StackSection />
+          <AboutSection />
+          <ExperienceSection />
+          <EducationSection />
+          <WorkProcessSection />
+          <PortfolioSection />
+          <CtaBannerSection />
+          <ServicesSection />
+          <ClientsSection />
+          <TestimonialSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }

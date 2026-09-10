@@ -1,5 +1,5 @@
 import { Container } from '../Container'
-import { workSteps } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 function StepIcon({ index }: { index: number }) {
   const paths = [
@@ -23,6 +23,9 @@ function StepIcon({ index }: { index: number }) {
 }
 
 export function WorkProcessSection() {
+  const { t, lang } = useLanguage()
+  const workSteps = t.workSteps
+
   return (
     <section
       id="processus"
@@ -40,18 +43,19 @@ export function WorkProcessSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Méthodologie
+            {lang === 'fr' ? 'Méthodologie' : 'Methodology'}
           </p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
-            Processus de travail
+            {lang === 'fr' ? 'Processus de travail' : 'Work process'}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Une méthode claire pour livrer des résultats mesurables : comprendre,
-            prioriser, concevoir puis itérer avec votre équipe.
+            {lang === 'fr'
+              ? 'Une méthode claire pour livrer des résultats mesurables : comprendre, prioriser, concevoir puis itérer avec votre équipe.'
+              : 'A clear method to deliver measurable results: understand, prioritize, design then iterate with your team.'}
           </p>
         </div>
 

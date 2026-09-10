@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { author, headerNavLinks, navLinks } from '../site-content'
+import { useLanguage } from '../i18n/useLanguage'
+import type { Lang } from '../site-content'
 
 function WhatsAppIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
@@ -9,7 +10,35 @@ function WhatsAppIcon({ className = 'h-4 w-4' }: { className?: string }) {
   )
 }
 
+function LanguageToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+  return (
+    <div className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 p-0.5 text-xs font-bold">
+      <button
+        type="button"
+        onClick={() => setLang('fr')}
+        className={`rounded-full px-2.5 py-1 transition ${
+          lang === 'fr' ? 'bg-brand-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700'
+        }`}
+        aria-pressed={lang === 'fr'}
+      >
+        FR
+      </button>
+      <button
+        type="button"
+        onClick={() => setLang('en')}
+        className={`rounded-full px-2.5 py-1 transition ${
+          lang === 'en' ? 'bg-brand-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-700'
+        }`}
+        aria-pressed={lang === 'en'}
+      >
+        EN
+      </button>
+    </div>
+  )
+}
+
 export function Header() {
+  const { t, lang, setLang } = useLanguage()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeId, setActiveId] = useState('accueil')
@@ -22,7 +51,7 @@ export function Header() {
   }, [])
 
   useEffect(() => {
-    const ids = navLinks.map((l) => l.href.slice(1))
+    const ids = t.navLinks.map((l) => l.href.slice(1))
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null)
@@ -38,7 +67,7 @@ export function Header() {
 
     sections.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+  }, [t.navLinks])
 
   return (
     <header className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
@@ -58,14 +87,14 @@ export function Header() {
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-purple-600 text-sm font-extrabold tracking-tight text-white shadow-md shadow-brand-600/30 ring-1 ring-white/20 transition-transform duration-300 hover:scale-105"
             aria-hidden
           >
-            {author.logoInitial}
+            {t.author.logoInitial}
           </span>
           <span className="flex min-w-0 flex-col leading-none">
             <span className="truncate text-sm font-bold tracking-tight text-slate-900 lg:text-base">
-              {author.brandTitle}
+              {t.author.brandTitle}
             </span>
             <span className="mt-0.5 hidden truncate text-[11px] font-medium text-slate-500 xs:block sm:text-[11px]">
-              {author.tagline}
+              {t.author.tagline}
             </span>
           </span>
         </a>
@@ -74,7 +103,7 @@ export function Header() {
           className="hidden items-center gap-5 text-sm font-medium text-slate-600 lg:flex xl:gap-7"
           aria-label="Navigation principale"
         >
-          {headerNavLinks.map((link) => {
+          {t.headerNavLinks.map((link) => {
             const isActive = link.href === `#${activeId}`
             return (
               <a
@@ -92,9 +121,10 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 lg:block lg:mr-2">
+        <div className="hidden shrink-0 items-center gap-3 lg:flex lg:mr-2">
+          <LanguageToggle lang={lang} setLang={setLang} />
           <a
-            href={author.whatsappHref}
+            href={t.author.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contacter sur WhatsApp"
@@ -105,16 +135,19 @@ export function Header() {
           </a>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-700 lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="sr-only">Menu</span>
-          {open ? '✕' : '☰'}
-        </button>
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
+          <LanguageToggle lang={lang} setLang={setLang} />
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-700"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className="sr-only">Menu</span>
+            {open ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
 
       {open ? (
@@ -124,7 +157,7 @@ export function Header() {
             className="rounded-3xl border border-slate-200/60 bg-white/95 p-4 shadow-lg shadow-slate-300/30 backdrop-blur-xl"
           >
             <nav className="flex flex-col gap-1 text-sm font-medium text-slate-700 sm:text-base">
-              {navLinks.map((link) => {
+              {t.navLinks.map((link) => {
                 const isActive = link.href === `#${activeId}`
                 return (
                   <a
@@ -142,7 +175,7 @@ export function Header() {
                 )
               })}
               <a
-                href={author.whatsappHref}
+                href={t.author.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contacter sur WhatsApp"

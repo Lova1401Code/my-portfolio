@@ -1,7 +1,9 @@
 import { Container } from '../Container'
-import { techStack } from '../../site-content'
+import { useLanguage } from '../../i18n/useLanguage'
 
 export function StackSection() {
+  const { t, lang } = useLanguage()
+
   return (
     <section
       id="stack"
@@ -20,25 +22,27 @@ export function StackSection() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
-            Ma stack
+            {lang === 'fr' ? 'Ma stack' : 'My stack'}
           </p>
           <h2
             id="stack-heading"
             className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl"
           >
-            Stack &amp; technologies
+            {lang === 'fr' ? 'Stack & technologies' : 'Stack & technologies'}
           </h2>
           <div
             className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-purple-500"
             aria-hidden
           />
           <p className="mt-4 text-sm text-slate-500 md:text-base">
-            Outils et environnements que j'utilise au quotidien.
+            {lang === 'fr'
+              ? "Outils et environnements que j'utilise au quotidien."
+              : 'Tools and environments I use every day.'}
           </p>
         </div>
 
         <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-3 sm:gap-4 md:grid-cols-5 lg:grid-cols-10">
-          {techStack.map((tech) => (
+          {t.techStack.map((tech) => (
             <li key={tech.name} className="group">
               <div className="flex flex-col items-center gap-2 rounded-2xl bg-white p-3 shadow-md ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-brand-200 sm:gap-3 sm:p-5">
                 <div
