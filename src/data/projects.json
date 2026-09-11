@@ -44,6 +44,8 @@
     "approche_technique_en": "Full-Stack frontend/backend architecture. React 18 + TypeScript frontend with Vite, Zustand state management, React Hook Form + Zod validation, API communication via Axios. Express 5 backend with Prisma as ORM for PostgreSQL, JWT authentication and Zod data validation. SPA deployment configuration for Vercel/Netlify.",
     "resultat": "Projet Full-Stack démontrant la maîtrise des fondamentaux : authentification, CRUD, gestion d'état et expérience utilisateur soignée avec accessibilité et design responsive.",
     "resultat_en": "Full-Stack project demonstrating mastery of fundamentals: authentication, CRUD, state management and a polished user experience with accessibility and responsive design.",
+    "deploiement": "Déployé sur Vercel (frontend SPA). Backend Express 5 + PostgreSQL via Prisma.",
+    "deploiement_en": "Deployed on Vercel (SPA frontend). Express 5 backend + PostgreSQL via Prisma.",
     "lien_git": null,
     "lien_autre": "https://taskflow-frontend-sigma-ten.vercel.app"
   },
@@ -98,6 +100,8 @@
     "approche_technique_en": "Full-Stack frontend/backend architecture. React frontend (JavaScript) integrating APIs and IPTV playback. NestJS backend with Prisma ORM for PostgreSQL, modular services following the Single Responsibility Principle. Docker containerization of certain services, scraping with Playwright and payment via Stripe. Ongoing project, private access (confidentiality).",
     "resultat": "Expérience Full-Stack orientée production : travail sur l'architecture, les performances, la sécurité et l'UX d'une plateforme réelle à grande échelle, en collaboration avec une équipe de développeurs et Lead Developers.",
     "resultat_en": "Production-oriented Full-Stack experience: work on architecture, performance, security and UX of a real large-scale platform, in collaboration with a team of developers and Lead Developers.",
+    "deploiement": "Conteneurisation Docker, déploiement serveur Nginx, scraping Playwright, paiement Stripe. Projet en cours (accès privé).",
+    "deploiement_en": "Docker containerization, Nginx server deployment, Playwright scraping, Stripe payment. Ongoing project (private access).",
     "lien_git": null,
     "lien_autre": null,
     "confidentiel": true
@@ -148,6 +152,8 @@
     "approche_technique_en": "Full-Stack frontend/backend architecture. React 19 + TypeScript frontend with hexagonal architecture in separate layers (core, application, infrastructure, presentation, adapters), asynchronous data via TanStack React Query, Zod validation, Vitest testing. NestJS 11 backend with JWT authentication, class-validator validation and Prisma for persistence. Hexagonal architecture applied on both sides.",
     "resultat": "Projet mettant en pratique une architecture logicielle mature (Clean/Hexagonal) tout en résolvant un problème réel de mise en relation avec un algorithme de matching.",
     "resultat_en": "Project putting into practice a mature software architecture (Clean/Hexagonal) while solving a real matchmaking problem with a matching algorithm.",
+    "deploiement": "Déployé sur Vercel (frontend). Backend NestJS 11, architecture hexagonale, tests Vitest.",
+    "deploiement_en": "Deployed on Vercel (frontend). NestJS 11 backend, hexagonal architecture, Vitest testing.",
     "lien_git": null,
     "lien_autre": "https://opportunity-match.vercel.app"
   },
@@ -198,6 +204,8 @@
     "approche_technique_en": "Full-Stack frontend/backend architecture. React 19 frontend with Clean / Hexagonal architecture (adapters, application, core, infrastructure, presentation), Recharts visualizations, Zod validation, API consumed via Axios. NestJS 11 backend with JWT authentication, class-validator validation and Prisma as ORM for PostgreSQL. Testing with Vitest on frontend and Jest on backend.",
     "resultat": "Application métier complète démontrant la capacité à concevoir un outil répondant aux besoins réels d'une équipe commerciale, avec une architecture maintenable et évolutive.",
     "resultat_en": "Complete business application demonstrating the ability to design a tool meeting the real needs of a sales team, with a maintainable and scalable architecture.",
+    "deploiement": "Déployé sur Vercel (frontend). Backend NestJS 11, tests Vitest (frontend) et Jest (backend).",
+    "deploiement_en": "Deployed on Vercel (frontend). NestJS 11 backend, Vitest testing (frontend) and Jest (backend).",
     "lien_git": null,
     "lien_autre": "https://my-crm-sage-eight.vercel.app"
   },
@@ -240,6 +248,8 @@
     "approche_technique_en": "React 18 + Vite frontend application consuming the third-party WeatherAPI (no proprietary backend). API calls via Axios. In-memory caching of identical responses for 60 seconds and cancellation of obsolete requests via AbortController. Light/dark theme managed by Tailwind (darkMode: 'class').",
     "resultat": "Application performante et légère démontrant l'intégration d'une API tierce, l'optimisation des requêtes (cache, AbortController) et une UX soignée sur tous les supports.",
     "resultat_en": "Performant and lightweight application demonstrating third-party API integration, request optimization (cache, AbortController) and a polished UX on all devices.",
+    "deploiement": "Déployé sur Vercel. Application frontend légère consommant l'API WeatherAPI.",
+    "deploiement_en": "Deployed on Vercel. Lightweight frontend application consuming the WeatherAPI.",
     "lien_git": null,
     "lien_autre": "https://weather-now-application-m-t-o.vercel.app/"
   },
@@ -291,6 +301,8 @@
     "approche_technique_en": "Full-Stack frontend/backend architecture. React (Vite) SPA frontend. Express 4 backend with JWT authentication and role-based access control (RBAC), in-memory mock API for the MVP. Containerized orchestration with Docker Compose. GitHub Actions CI pipeline (tests, lint, build, e2e smoke). Roadmap: PostgreSQL, OpenAPI, MQTT/WebSocket, predictive ML, Kubernetes.",
     "resultat": "Projet ambitieux démontrant l'intégration du développement logiciel, des pratiques DevOps (Docker, CI) et de l'IoT dans un contexte industriel réel, avec une architecture pensée pour évoluer vers la production.",
     "resultat_en": "Ambitious project demonstrating the integration of software development, DevOps practices (Docker, CI) and IoT in a real industrial context, with an architecture designed to evolve toward production.",
+    "deploiement": "Orchestration Docker Compose, pipeline CI GitHub Actions (tests, lint, build, e2e smoke). Roadmap : PostgreSQL, Kubernetes, ML prédictif.",
+    "deploiement_en": "Docker Compose orchestration, GitHub Actions CI pipeline (tests, lint, build, e2e smoke). Roadmap: PostgreSQL, Kubernetes, predictive ML.",
     "lien_git": null,
     "lien_autre": "https://industrial-managment-frontend.vercel.app"
   },
@@ -340,6 +352,8 @@
     "approche_technique_en": "Full-Stack frontend/backend architecture. React 19 + Vite frontend (JavaScript) with React Router, shadcn UI (Radix UI) and Tailwind CSS v4, Framer Motion animations, Recharts graphs. NestJS 11 backend with JWT authentication, class-validator validation and Prisma as ORM for PostgreSQL. Abstract service layer on the frontend, designed to switch from localStorage mock to the NestJS API without refactor.",
     "resultat": "Application métier multi-rôles démontrant la capacité à concevoir un système complexe avec plusieurs types d'utilisateurs, des permissions différenciées et une architecture prête pour le passage en production.",
     "resultat_en": "Multi-role business application demonstrating the ability to design a complex system with multiple user types, differentiated permissions and an architecture ready for production.",
+    "deploiement": "Déployé sur Vercel (frontend). Backend NestJS 11 + PostgreSQL via Prisma, UI shadcn (Radix UI).",
+    "deploiement_en": "Deployed on Vercel (frontend). NestJS 11 backend + PostgreSQL via Prisma, shadcn UI (Radix UI).",
     "lien_git": null,
     "lien_autre": "https://eduflow-seven-sigma.vercel.app/"
   },
@@ -381,6 +395,8 @@
     "approche_technique_en": "React 19 + TypeScript application with Vite. Styling with Tailwind CSS v4. Architecture of reusable components organized by section. Project data separated from the code (projects.json) to allow adding or modifying without touching the code. ESLint with typescript-eslint for code quality.",
     "resultat": "Site portfolio professionnel, rapide et maintenable, présentant un positionnement Full-Stack et DevOps avec une expérience utilisateur soignée.",
     "resultat_en": "Professional, fast and maintainable portfolio website, showcasing a Full-Stack and DevOps positioning with a polished user experience.",
+    "deploiement": "Déployé sur Vercel. Build Vite + TypeScript, ESLint, i18n FR/EN.",
+    "deploiement_en": "Deployed on Vercel. Vite + TypeScript build, ESLint, FR/EN i18n.",
     "lien_git": null,
     "lien_autre": "https://my-portfolio-lime-gamma-43.vercel.app/"
   }

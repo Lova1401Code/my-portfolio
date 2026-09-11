@@ -81,7 +81,7 @@ const author: Author = {
   brandTitle: 'Lova Ramiharisoa',
   logoInitial: 'LR',
   displayName: 'Full-Stack Developer',
-  tagline: 'Full-Stack Developer | DevOps · AI Integration',
+  tagline: 'Full-Stack Developer | DevOps · AI Integration — Disponible immédiatement (Full Remote)',
   whatsappHref: 'https://wa.me/261334393443',
 }
 
@@ -180,7 +180,7 @@ export const translations: Record<Lang, Content> = {
       { href: '#contact', label: 'Contact' },
     ],
     hero: {
-      title: 'Full-Stack Developer | DevOps · AI Integration',
+      title: 'Disponible immédiatement pour missions en freelance / sous-traitance (Full Remote)',
       subtitle:
         "Je développe des applications web performantes avec React, Next.js, NestJS et PostgreSQL (Prisma). Curieux et rigoureux, j'intègre également Docker, CI/CD et Nginx pour automatiser et faciliter le déploiement, ainsi que les API LLM (OpenAI) pour augmenter mes applications via le prompt engineering, des assistants IA et l'automatisation de workflows.",
       stats: [
@@ -201,7 +201,7 @@ export const translations: Record<Lang, Content> = {
         "Je m'intéresse également aux pratiques DevOps afin de mieux maîtriser le cycle de vie complet d'une application : conteneurisation avec Docker, automatisation avec CI/CD et déploiement sur serveur avec Nginx.",
         "J'intègre également des API LLM (OpenAI) dans mes applications : prompt engineering, assistants IA et automatisation de workflows, pour concevoir des outils métier augmentés par l'IA.",
         "J'apprécie particulièrement les projets nécessitant la conception d'applications métier, de dashboards, d'API et d'architectures frontend/backend.",
-        'Disponible pour des missions freelance, des collaborations à distance et des opportunités en CDI ou CDD.',
+        'Disponible immédiatement pour missions freelance / sous-traitance (Full Remote), collaborations à distance et opportunités en CDI ou CDD.',
       ],
     },
     workSteps: [
@@ -340,7 +340,7 @@ export const translations: Record<Lang, Content> = {
       { href: '#contact', label: 'Contact' },
     ],
     hero: {
-      title: 'Full-Stack Developer | DevOps · AI Integration',
+      title: 'Available immediately for freelance / subcontracting missions (Full Remote)',
       subtitle:
         'I build high-performance web applications with React, Next.js, NestJS and PostgreSQL (Prisma). Curious and rigorous, I also integrate Docker, CI/CD and Nginx to automate and streamline deployment, as well as LLM APIs (OpenAI) to enhance my applications through prompt engineering, AI assistants and workflow automation.',
       stats: [
@@ -361,7 +361,7 @@ export const translations: Record<Lang, Content> = {
         'I am also interested in DevOps practices to better master the full lifecycle of an application: containerization with Docker, automation with CI/CD and server deployment with Nginx.',
         'I also integrate LLM APIs (OpenAI) into my applications: prompt engineering, AI assistants and workflow automation, to build business tools augmented by AI.',
         'I particularly enjoy projects requiring the design of business applications, dashboards, APIs and frontend/backend architectures.',
-        'Available for freelance missions, remote collaborations and full-time or fixed-term opportunities.',
+        'Available immediately for freelance / subcontracting missions (Full Remote), remote collaborations and full-time or fixed-term opportunities.',
       ],
     },
     workSteps: [

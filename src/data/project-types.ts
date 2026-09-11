@@ -17,6 +17,8 @@ export type ProjectFromJson = {
   approche_technique_en?: string
   resultat: string
   resultat_en?: string
+  deploiement?: string
+  deploiement_en?: string
   lien_git: string | null
   lien_autre: string | null
   confidentiel?: boolean

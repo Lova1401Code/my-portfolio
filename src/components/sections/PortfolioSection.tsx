@@ -119,6 +119,15 @@ export function PortfolioSection() {
                   {project.description_projet}
                 </p>
 
+                {project.deploiement && (
+                  <p className="mt-3 inline-flex items-start gap-1.5 rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-600 ring-1 ring-slate-100">
+                    <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-600" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M4.5 16.5L3 21l4.5-1.5M4.5 16.5l9-9m-9 9L12 21m-7.5-4.5L9 9m4.5-4.5L15 3l3 3-1.5 4.5L9 18m4.5-13.5L9 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="line-clamp-2">{project.deploiement}</span>
+                  </p>
+                )}
+
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.techno_utilisee.slice(0, 4).map((t) => (
                     <span

@@ -62,7 +62,16 @@ export function HeroSection() {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="text-center lg:text-left">
-            <h1 className="text-[1.75rem] font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/80 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 shadow-sm ring-1 ring-emerald-100">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+              </span>
+              {lang === 'fr'
+                ? 'Disponible immédiatement — Full Remote'
+                : 'Available immediately — Full Remote'}
+            </span>
+            <h1 className="mt-5 text-[1.75rem] font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
               {hero.title}
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">

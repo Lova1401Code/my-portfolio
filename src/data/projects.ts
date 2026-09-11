@@ -18,14 +18,12 @@ export type Project = {
   approche_technique_en?: string
   resultat: string
   resultat_en?: string
+  deploiement?: string
+  deploiement_en?: string
   lien_git: string | null
   lien_autre: string | null
   confidentiel?: boolean
 }
-
-import projectsData from './projects.json'
-
-export const projects: Project[] = projectsData as Project[]
 
 export type LocalizedProject = {
   titre_du_projet: string
@@ -38,10 +36,15 @@ export type LocalizedProject = {
   fonctionnalite_principale: string[]
   approche_technique: string
   resultat: string
+  deploiement?: string
   lien_git: string | null
   lien_autre: string | null
   confidentiel?: boolean
 }
+
+import projectsData from './projects.json'
+
+export const projects: Project[] = projectsData as Project[]
 
 export function localizeProject(p: Project, lang: Lang): LocalizedProject {
   return {
@@ -60,6 +63,7 @@ export function localizeProject(p: Project, lang: Lang): LocalizedProject {
     approche_technique:
       lang === 'en' ? (p.approche_technique_en ?? p.approche_technique) : p.approche_technique,
     resultat: lang === 'en' ? (p.resultat_en ?? p.resultat) : p.resultat,
+    deploiement: lang === 'en' ? (p.deploiement_en ?? p.deploiement) : p.deploiement,
     lien_git: p.lien_git,
     lien_autre: p.lien_autre,
     confidentiel: p.confidentiel,

@@ -213,6 +213,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           </div>
 
+          {project.deploiement && (
+            <div className="mt-4 rounded-2xl bg-gradient-to-br from-brand-50 to-purple-50 p-4 ring-1 ring-brand-200 sm:p-5">
+              <h4 className="inline-flex items-center gap-2 text-sm font-bold text-brand-700">
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path d="M4.5 16.5L3 21l4.5-1.5M4.5 16.5l9-9m-9 9L12 21m-7.5-4.5L9 9m4.5-4.5L15 3l3 3-1.5 4.5L9 18m4.5-13.5L9 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {lang === 'fr' ? 'Déploiement & DevOps' : 'Deployment & DevOps'}
+              </h4>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                {project.deploiement}
+              </p>
+            </div>
+          )}
+
           {(project.lien_git || project.lien_autre) && (
             <div className="mt-6 flex flex-wrap gap-3">
               {project.lien_git && (
