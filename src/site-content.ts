@@ -81,7 +81,7 @@ const author: Author = {
   brandTitle: 'Lova Ramiharisoa',
   logoInitial: 'LR',
   displayName: 'Full-Stack Developer',
-  tagline: 'Full-Stack Developer | DevOps · AI Integration — Disponible immédiatement (Full Remote)',
+  tagline: 'Full-Stack Developer | DevOps · AI Integration',
   whatsappHref: 'https://wa.me/261334393443',
 }
 
@@ -180,7 +180,7 @@ export const translations: Record<Lang, Content> = {
       { href: '#contact', label: 'Contact' },
     ],
     hero: {
-      title: 'Disponible immédiatement pour missions en freelance / sous-traitance (Full Remote)',
+      title: 'Full-Stack Developer | DevOps · AI Integration',
       subtitle:
         "Je développe des applications web performantes avec React, Next.js, NestJS et PostgreSQL (Prisma). Curieux et rigoureux, j'intègre également Docker, CI/CD et Nginx pour automatiser et faciliter le déploiement, ainsi que les API LLM (OpenAI) pour augmenter mes applications via le prompt engineering, des assistants IA et l'automatisation de workflows.",
       stats: [
@@ -340,7 +340,7 @@ export const translations: Record<Lang, Content> = {
       { href: '#contact', label: 'Contact' },
     ],
     hero: {
-      title: 'Available immediately for freelance / subcontracting missions (Full Remote)',
+      title: 'Full-Stack Developer | DevOps · AI Integration',
       subtitle:
         'I build high-performance web applications with React, Next.js, NestJS and PostgreSQL (Prisma). Curious and rigorous, I also integrate Docker, CI/CD and Nginx to automate and streamline deployment, as well as LLM APIs (OpenAI) to enhance my applications through prompt engineering, AI assistants and workflow automation.',
       stats: [
