@@ -60,6 +60,23 @@ export type ContactInfo = {
   location: string
 }
 
+export type SupportCategory = {
+  icon: 'system' | 'network' | 'maintenance' | 'security'
+  title: string
+  skills: string[]
+}
+
+export type ItLabExercise = {
+  title: string
+  problem: string
+  commands: string[]
+  diagnosis: string
+  solution: string
+  result: string
+}
+
+export type ItLabInstallStep = { label: string }
+
 export type Content = {
   author: Author
   navLinks: readonly NavLink[]
@@ -75,6 +92,10 @@ export type Content = {
   testimonial: Testimonial
   socialLinks: readonly SocialLink[]
   contactInfo: ContactInfo
+  supportCategories: readonly SupportCategory[]
+  itLabExercises: readonly ItLabExercise[]
+  itLabInstallSteps: readonly ItLabInstallStep[]
+  itTools: readonly string[]
 }
 
 const author: Author = {
@@ -163,6 +184,7 @@ export const translations: Record<Lang, Content> = {
     navLinks: [
       { href: '#accueil', label: 'Accueil' },
       { href: '#stack', label: 'Stack' },
+      { href: '#support', label: 'Support IT' },
       { href: '#apropos', label: 'À propos' },
       { href: '#experiences', label: 'Expériences' },
       { href: '#formation', label: 'Formation' },
@@ -317,12 +339,105 @@ export const translations: Record<Lang, Content> = {
     },
     socialLinks,
     contactInfo,
+    supportCategories: [
+      {
+        icon: 'system',
+        title: 'Systèmes',
+        skills: [
+          'Windows — Installation et configuration',
+          'Dépannage système',
+          'Gestion des utilisateurs',
+          'Gestion des périphériques',
+        ],
+      },
+      {
+        icon: 'network',
+        title: 'Réseaux',
+        skills: [
+          'TCP/IP — IPv4',
+          'DHCP / DNS',
+          'LAN / Wi-Fi',
+          'Diagnostic réseau',
+        ],
+      },
+      {
+        icon: 'maintenance',
+        title: 'Maintenance',
+        skills: [
+          'Diagnostic matériel',
+          'Installation de logiciels et pilotes',
+          'Dépannage PC',
+          'Imprimantes et périphériques',
+        ],
+      },
+      {
+        icon: 'security',
+        title: 'Sécurité',
+        skills: [
+          'Mises à jour / Antivirus / Firewall',
+          'Gestion des droits',
+          'Sauvegarde',
+          'Sensibilisation aux risques',
+        ],
+      },
+    ],
+    itLabExercises: [
+      {
+        title: 'Diagnostic d\'une connexion Internet',
+        problem:
+          "Un ordinateur est connecté au réseau local mais n'a pas accès à Internet.",
+        commands: [
+          'ipconfig /all',
+          'ping <passerelle>',
+          'ping 8.8.8.8',
+          'nslookup google.com',
+        ],
+        diagnosis: 'Problème DNS — la résolution de noms échoue.',
+        solution:
+          "Correction de la configuration DNS (serveurs DNS publics Google 8.8.8.8 / 8.8.4.4).",
+        result: 'Connexion Internet rétablie, résolution des noms fonctionnelle.',
+      },
+      {
+        title: 'Diagnostic d\'un PC lent',
+        problem:
+          "Un poste de travail devient lent à l'utilisation. Objectif : identifier la cause et optimiser le système.",
+        commands: [
+          'Gestionnaire des tâches → CPU, RAM, Disque',
+          'Gestionnaire des tâches → Démarrage',
+          'Nettoyage des fichiers temporaires',
+          'Désactivation des programmes au démarrage inutiles',
+        ],
+        diagnosis:
+          "Disque saturé + plusieurs programmes lourds au démarrage consomment les ressources.",
+        solution:
+          "Nettoyage disque, désactivation des programmes au démarrage inutiles, mise à jour des pilotes et vérification Windows Update.",
+        result: "Temps de démarrage réduit, fluidité d'utilisation restaurée.",
+      },
+    ],
+    itLabInstallSteps: [
+      { label: 'Installation Windows' },
+      { label: 'Pilotes' },
+      { label: 'Windows Update' },
+      { label: 'Logiciels' },
+      { label: 'Configuration utilisateur' },
+      { label: 'Tests' },
+    ],
+    itTools: [
+      'Windows',
+      'Linux',
+      'PowerShell / CMD',
+      'Git',
+      'Docker',
+      'GLPI',
+      'VirtualBox / VMware',
+    ],
   },
   en: {
     author,
     navLinks: [
       { href: '#accueil', label: 'Home' },
       { href: '#stack', label: 'Stack' },
+      { href: '#support', label: 'IT Support' },
       { href: '#apropos', label: 'About' },
       { href: '#experiences', label: 'Experience' },
       { href: '#formation', label: 'Education' },
@@ -477,5 +592,97 @@ export const translations: Record<Lang, Content> = {
     },
     socialLinks,
     contactInfo,
+    supportCategories: [
+      {
+        icon: 'system',
+        title: 'Systems',
+        skills: [
+          'Windows — Installation and configuration',
+          'System troubleshooting',
+          'User management',
+          'Device management',
+        ],
+      },
+      {
+        icon: 'network',
+        title: 'Networking',
+        skills: [
+          'TCP/IP — IPv4',
+          'DHCP / DNS',
+          'LAN / Wi-Fi',
+          'Network diagnostics',
+        ],
+      },
+      {
+        icon: 'maintenance',
+        title: 'Maintenance',
+        skills: [
+          'Hardware diagnostics',
+          'Software and driver installation',
+          'PC troubleshooting',
+          'Printers and peripherals',
+        ],
+      },
+      {
+        icon: 'security',
+        title: 'Security',
+        skills: [
+          'Updates / Antivirus / Firewall',
+          'Access rights management',
+          'Backup',
+          'Risk awareness',
+        ],
+      },
+    ],
+    itLabExercises: [
+      {
+        title: 'Internet connection diagnostics',
+        problem:
+          'A computer is connected to the local network but has no Internet access.',
+        commands: [
+          'ipconfig /all',
+          'ping <gateway>',
+          'ping 8.8.8.8',
+          'nslookup google.com',
+        ],
+        diagnosis: 'DNS issue — name resolution is failing.',
+        solution:
+          'Fixed DNS configuration (Google public DNS 8.8.8.8 / 8.8.4.4).',
+        result: 'Internet connection restored, name resolution working.',
+      },
+      {
+        title: 'Slow PC diagnostics',
+        problem:
+          'A workstation becomes slow to use. Goal: identify the cause and optimize the system.',
+        commands: [
+          'Task Manager → CPU, RAM, Disk',
+          'Task Manager → Startup',
+          'Clean temporary files',
+          'Disable unnecessary startup programs',
+        ],
+        diagnosis:
+          'Full disk + several heavy startup programs consuming resources.',
+        solution:
+          'Disk cleanup, disabled unnecessary startup programs, updated drivers and ran Windows Update.',
+        result: 'Boot time reduced, smooth usage restored.',
+      },
+    ],
+    itLabInstallSteps: [
+      { label: 'Windows Installation' },
+      { label: 'Drivers' },
+      { label: 'Windows Update' },
+      { label: 'Software' },
+      { label: 'User configuration' },
+      { label: 'Testing' },
+    ],
+    itTools: [
+      'Windows',
+      'Linux',
+      'PowerShell / CMD',
+      'Git',
+      'Docker',
+      'GLPI',
+      'VirtualBox / VMware',
+    ],
   },
 }

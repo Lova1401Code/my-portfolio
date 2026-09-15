@@ -7,6 +7,7 @@ import { ExperienceSection } from './components/sections/ExperienceSection'
 import { HeroSection } from './components/sections/HeroSection'
 import { PortfolioSection } from './components/sections/PortfolioSection'
 import { StackSection } from './components/sections/StackSection'
+import { SupportSection } from './components/sections/SupportSection'
 import { ServicesSection } from './components/sections/ServicesSection'
 import { TestimonialSection } from './components/sections/TestimonialSection'
 import { WorkProcessSection } from './components/sections/WorkProcessSection'
@@ -22,6 +23,7 @@ export default function App() {
         <main>
           <HeroSection />
           <StackSection />
+          <SupportSection />
           <AboutSection />
           <ExperienceSection />
           <EducationSection />
