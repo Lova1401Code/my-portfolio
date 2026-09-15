@@ -14,6 +14,7 @@ import { WorkProcessSection } from './components/sections/WorkProcessSection'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { LanguageProvider } from './i18n/LanguageContext'
+import { SUPPORT_ENABLED } from './site-content'
 
 export default function App() {
   return (
@@ -23,7 +24,7 @@ export default function App() {
         <main>
           <HeroSection />
           <StackSection />
-          <SupportSection />
+          {SUPPORT_ENABLED ? <SupportSection /> : null}
           <AboutSection />
           <ExperienceSection />
           <EducationSection />

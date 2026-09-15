@@ -2,6 +2,17 @@ import { projects } from './data/projects'
 
 export type Lang = 'fr' | 'en'
 
+export type ProfileMode = 'fullstack' | 'full'
+
+export const PROFILE_MODE: ProfileMode =
+  (import.meta.env.VITE_PROFILE_MODE as string | undefined) === 'full' ? 'full' : 'fullstack'
+
+export const SUPPORT_ENABLED: boolean = PROFILE_MODE === 'full'
+
+function filterNavLinks<T extends { href: string }>(links: readonly T[]): T[] {
+  return SUPPORT_ENABLED ? [...links] : links.filter((l) => l.href !== '#support')
+}
+
 export type NavLink = { href: string; label: string }
 
 export type Author = {
@@ -79,8 +90,8 @@ export type ItLabInstallStep = { label: string }
 
 export type Content = {
   author: Author
-  navLinks: readonly NavLink[]
-  headerNavLinks: readonly NavLink[]
+  navLinks: NavLink[]
+  headerNavLinks: NavLink[]
   hero: Hero
   about: About
   workSteps: readonly WorkStep[]
@@ -685,4 +696,11 @@ export const translations: Record<Lang, Content> = {
       'VirtualBox / VMware',
     ],
   },
+}
+
+if (!SUPPORT_ENABLED) {
+  for (const lang of Object.keys(translations) as Lang[]) {
+    translations[lang].navLinks = filterNavLinks(translations[lang].navLinks)
+    translations[lang].headerNavLinks = filterNavLinks(translations[lang].headerNavLinks)
+  }
 }
